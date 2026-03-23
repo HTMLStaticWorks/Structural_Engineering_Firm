@@ -35,14 +35,14 @@
 
 /* ---- Dark Theme ---- */
 [data-theme="dark"] {
-  --bg:           #0d1526;
-  --bg-card:      #162040;
-  --bg-navbar:    #0d1526;
-  --text-main:    #e8eaf6;
-  --text-muted:   #9aa3b8;
-  --border:       #233060;
-  --shadow:       0 4px 24px rgba(0,0,0,0.35);
-  --shadow-hover: 0 8px 32px rgba(0,0,0,0.50);
+  --bg:           #0f172a; /* Slightly lighter navy for better depth */
+  --bg-card:      #1e293b; /* More distinct card background */
+  --bg-navbar:    #0f172a;
+  --text-main:    #f8fafc; /* Crisp white for main text */
+  --text-muted:   #cbd5e1; /* Significantly brighter muted text for contrast (was #9aa3b8) */
+  --border:       #334155;
+  --shadow:       0 4px 24px rgba(0,0,0,0.45);
+  --shadow-hover: 0 8px 32px rgba(0,0,0,0.60);
 }
 
 /* ---- Reset & Base ---- */
@@ -513,7 +513,7 @@ h1,h2,h3,h4,h5,h6 {
 .auth-card h2 { font-size: 2rem; font-weight: 800; color: var(--primary); }
 [data-theme="dark"] .auth-card h2 { color: var(--secondary); }
 .auth-card .form-control {
-  background: var(--bg);
+  background: var(--bg-card); /* Use card background for better contrast against wrapper */
   border: 1.5px solid var(--border);
   color: var(--text-main);
   border-radius: var(--radius);
@@ -521,9 +521,24 @@ h1,h2,h3,h4,h5,h6 {
   transition: var(--transition);
 }
 .auth-card .form-control:focus {
-  border-color: var(--primary);
-  box-shadow: 0 0 0 3px rgba(26,47,90,0.12);
+  border-color: var(--secondary); /* Use secondary for better visibility on focus */
+  box-shadow: 0 0 0 3px rgba(200,146,42,0.15);
+  background: var(--bg);
 }
+
+/* ---- Dark Mode Contrast Fixes ---- */
+[data-theme="dark"] ::placeholder {
+  color: var(--text-muted) !important;
+  opacity: 1 !important;
+}
+[data-theme="dark"] :-ms-input-placeholder { color: var(--text-muted) !important; }
+[data-theme="dark"] ::-ms-input-placeholder { color: var(--text-muted) !important; }
+
+[data-theme="dark"] .bg-light { background-color: var(--bg) !important; color: var(--text-main) !important; }
+[data-theme="dark"] .text-muted { color: var(--text-muted) !important; }
+[data-theme="dark"] .form-control { background-color: var(--bg); border-color: var(--border); color: var(--text-main); }
+[data-theme="dark"] .form-control:focus { background-color: var(--bg-card); color: var(--text-main); }
+[data-theme="dark"] select.form-select { background-color: var(--bg); color: var(--text-main); border-color: var(--border); }
 .social-login-btn {
   display: flex;
   align-items: center;
