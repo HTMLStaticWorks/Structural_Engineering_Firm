@@ -15,33 +15,56 @@
 </head>
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg sticky-top">
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg brand-navbar sticky-top">
         <div class="container">
             <a class="navbar-brand" href="index.html">
                 <i class="bi bi-bridge-fill text-secondary-brand"></i>
                 ARC<span>VANTAGE</span>
             </a>
-            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <i class="bi bi-list fs-1 text-white"></i>
+            
+            <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                <i class="bi bi-list fs-1"></i>
             </button>
+
+            <!-- Desktop Menu -->
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
-                    <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                    <li class="nav-item ms-lg-3">
-                        <a href="login.html" class="btn btn-outline-light btn-sm px-4">Login</a>
-                    </li>
-                </ul>
-                <div class="d-flex align-items-center gap-3 ms-lg-3">
-                    <div id="themeToggle"><i class="bi bi-moon-fill"></i></div>
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item ms-lg-3">
+                            <a href="login.html" class="btn btn-outline-light btn-sm px-4">Login</a>
+                        </li>
+                        <li class="nav-item ms-2">
+                            <a href="signup.html" class="btn btn-secondary-brand btn-sm px-4 text-white">Sign Up</a>
+                        </li>
+                    </ul>
+                    <div id="themeToggle" class="ms-lg-3"><i class="bi bi-moon-fill"></i></div>
                 </div>
             </div>
         </div>
     </nav>
+
+    <!-- Mobile Offcanvas -->
+    <div class="offcanvas offcanvas-end offcanvas-dark" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title footer-brand-name">ARC<span>VANTAGE</span></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
+                <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
+                <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item mt-3"><a href="login.html" class="btn btn-brand-secondary w-100">Login</a></li>
+            </ul>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <header class="hero-section text-white py-5 position-relative">
