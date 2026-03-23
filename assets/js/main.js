@@ -1,0 +1,125 @@
+/* ============================================================
+   STRUCTURAL ENGINEERING FIRM (BRIDGE SPECIALIST)
+   Global Scripts — main.js
+   ============================================================ */
+
+document.addEventListener('DOMContentLoaded', () => {
+    // ---- Theme Toggle Logic ----
+    const themeToggle = document.getElementById('themeToggle');
+    const themeIcon = themeToggle ? themeToggle.querySelector('i') : null;
+    
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    updateThemeIcon(savedTheme);
+
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            let currentTheme = document.documentElement.getAttribute('data-theme');
+            let newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+    }
+
+    function updateThemeIcon(theme) {
+        if (!themeIcon) return;
+        if (theme === 'dark') {
+            themeIcon.classList.replace('bi-moon-fill', 'bi-sun-fill');
+        } else {
+            themeIcon.classList.replace('bi-sun-fill', 'bi-moon-fill');
+        }
+    }
+
+    // ---- Back to Top Button ----
+    const backToTopBtn = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 400) {
+            backToTopBtn?.classList.add('show');
+        } else {
+            backToTopBtn?.classList.remove('show');
+        }
+    });
+
+    backToTopBtn?.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // ---- Navbar Scroll Effect ----
+    const navbar = document.querySelector('.brand-navbar');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+            navbar?.classList.add('shadow-lg');
+        } else {
+            navbar?.classList.remove('shadow-lg');
+        }
+    });
+
+    // ---- Counter Animation ----
+    const counters = document.querySelectorAll('.stat-number');
+    const speed = 200;
+
+    const animateCounters = () => {
+        counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const inc = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + inc);
+                    setTimeout(updateCount, 1);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            updateCount();
+        });
+    };
+
+    // Intersection Observer for counters
+    const observerOptions = {
+        threshold: 0.5
+    };
+
+    const counterObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    const statsSection = document.querySelector('.stats-section');
+    if (statsSection) {
+        counterObserver.observe(statsSection);
+    }
+
+    // ---- Dashboard Sidebar Toggle (Mobile) ----
+    const sidebar = document.querySelector('.dash-sidebar');
+    const sidebarToggle = document.getElementById('sidebarToggle');
+    if (sidebarToggle && sidebar) {
+        sidebarToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('open');
+        });
+    }
+
+    // Close sidebar when clicking outside on mobile
+    document.addEventListener('click', (e) => {
+        if (sidebar && sidebar.classList.contains('open') && !sidebar.contains(e.target) && !sidebarToggle?.contains(e.target)) {
+            sidebar.classList.remove('open');
+        }
+    });
+
+    // ---- Active Link Selection ----
+    const currentPath = window.location.pathname.split('/').pop();
+    const navLinks = document.querySelectorAll('.nav-link');
+    navLinks.forEach(link => {
+        if (link.getAttribute('href') === currentPath) {
+            link.classList.add('active');
+        }
+    });
+});

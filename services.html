@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services - Structural Engineering Firm | Bridge Specialist</title>
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header / Navbar -->
+    <nav class="navbar navbar-expand-lg brand-navbar">
+        <div class="container">
+            <a class="navbar-brand" href="home1.html">
+                <i class="bi bi-bridge-fill text-secondary-brand"></i>
+                STRUC<span>ENG</span>
+            </a>
+            <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                <i class="bi bi-list fs-1"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center text-center">
+                        <li class="nav-item"><a class="nav-link" href="home1.html">Home 1</a></li>
+                        <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                        <li class="nav-item ms-lg-3">
+                            <a href="login.html" class="btn btn-outline-light btn-sm px-4 mt-2 mt-lg-0">Login</a>
+                        </li>
+                    </ul>
+                    <div id="themeToggle" class="ms-lg-3"><i class="bi bi-moon-fill"></i></div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Offcanvas -->
+    <div class="offcanvas offcanvas-end offcanvas-dark" tabindex="-1" id="offcanvasNavbar">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title footer-brand-name">STRUC<span>ENG</span></h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                <li class="nav-item"><a class="nav-link" href="home1.html">Home 1</a></li>
+                <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+                <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+                <li class="nav-item mt-3"><a href="login.html" class="btn btn-brand-secondary w-100">Login</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="bg-primary pt-5 pb-5 text-white text-center" style="background: linear-gradient(rgba(26,47,90,0.95), rgba(26,47,90,0.95)), url('assets/images/hero.png') center/cover;">
+        <div class="container py-lg-5">
+            <span class="section-label">Engineering Solutions</span>
+            <h1 class="display-4 fw-bold mb-3">Professional Services</h1>
+            <p class="lead opacity-75 mx-auto" style="max-width: 700px;">Comprehensive structural engineering services tailored for government infrastructure and public safety.</p>
+        </div>
+    </header>
+
+    <!-- Services Grid -->
+    <section class="section-pad">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <img src="assets/images/construction.png" class="svc-img" alt="Bridge Design">
+                        <div class="svc-body text-center">
+                            <div class="svc-icon mx-auto"><i class="bi bi-vector-pen"></i></div>
+                            <h5>Conceptual Design</h5>
+                            <p class="small text-muted">Architectural & structural feasibility studies for new infrastructure.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 2 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <img src="assets/images/team.png" class="svc-img" alt="Seismic">
+                        <div class="svc-body text-center">
+                            <div class="svc-icon mx-auto"><i class="bi bi-activity"></i></div>
+                            <h5>Seismic Analysis</h5>
+                            <p class="small text-muted">Rigorous testing for earthquake resistance and structural health.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 3 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <img src="assets/images/digitaltwin.png" class="svc-img" alt="SHM">
+                        <div class="svc-body text-center">
+                            <div class="svc-icon mx-auto"><i class="bi bi-moisture"></i></div>
+                            <h5>Structural Monitoring</h5>
+                            <p class="small text-muted">Real-time sensor integration for continuous integrity data.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 4 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <img src="assets/images/maintenance.png" class="svc-img" alt="Rehab">
+                        <div class="svc-body text-center">
+                            <div class="svc-icon mx-auto"><i class="bi bi-hammer"></i></div>
+                            <h5>Rehabilitation</h5>
+                            <p class="small text-muted">Extending the life of historic and aging bridge structures.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 5 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <img src="assets/images/hero.png" class="svc-img" alt="Tendering">
+                        <div class="svc-body text-center">
+                            <div class="svc-icon mx-auto"><i class="bi bi-file-earmark-text"></i></div>
+                            <h5>Gov Tenders</h5>
+                            <p class="small text-muted">Specialized documentation and compliance for public bids.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 6 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <img src="assets/images/team.png" class="svc-img" alt="Audit">
+                        <div class="svc-body text-center">
+                            <div class="svc-icon mx-auto"><i class="bi bi-clipboard-check"></i></div>
+                            <h5>Compliance Audits</h5>
+                            <p class="small text-muted">Regulatory inspections and AASHTO safety certification.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 7 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <img src="assets/images/digitaltwin.png" class="svc-img" alt="BIM">
+                        <div class="svc-body text-center">
+                            <div class="svc-icon mx-auto"><i class="bi bi-box"></i></div>
+                            <h5>BIM Modeling</h5>
+                            <p class="small text-muted">High-fidelity 3D structural modeling for complex geometry.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Service 8 -->
+                <div class="col-md-6 col-lg-3">
+                    <div class="service-card">
+                        <img src="assets/images/maintenance.png" class="svc-img" alt="Vibration">
+                        <div class="svc-body text-center">
+                            <div class="svc-icon mx-auto"><i class="bi bi-broadcast"></i></div>
+                            <h5>Vibration Testing</h5>
+                            <p class="small text-muted">Dynamic analysis for high-speed rail and wind loading.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="brand-footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="footer-brand-name">STRUC<span>ENG</span></div>
+                    <p class="footer-desc mt-3">Specialized structural engineering firm with an authoritative focus on bridge design.</p>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <h5>Quick Menu</h5>
+                    <a href="home1.html">Home 1</a>
+                    <a href="home2.html">Home 2</a>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <h5>Legal</h5>
+                    <a href="#">Privacy</a>
+                    <a href="#">Terms</a>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Contact Hub</h5>
+                    <p class="small text-muted">admin@struceng-firm.com</p>
+                    <div class="social-icons pt-2">
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p class="mb-0">© 2026 STRUCENG. Technical Excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top -->
+    <button id="backToTop"><i class="bi bi-arrow-up"></i></button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
