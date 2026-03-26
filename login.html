@@ -12,66 +12,17 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <!-- Header / Navbar -->
-    <nav class="navbar navbar-expand-lg brand-navbar sticky-top">
-        <div class="container">
-            <a class="navbar-brand" href="index.html">
-                <i class="bi bi-bridge-fill text-secondary-brand"></i>
-                ARC<span>VANTAGE</span>
-            </a>
-            
-            <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
-                <i class="bi bi-list fs-1"></i>
-            </button>
-
-            <!-- Desktop Menu -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
-                        <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
-                        <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                        <li class="nav-item ms-lg-3">
-                            <a href="login.html" class="btn btn-outline-light btn-sm px-4">Login</a>
-                        </li>
-                        <li class="nav-item ms-2">
-                            <a href="signup.html" class="btn btn-secondary-brand btn-sm px-4 text-white">Sign Up</a>
-                        </li>
-                    </ul>
-                    <div id="themeToggle" class="ms-lg-3"><i class="bi bi-moon-fill"></i></div>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Mobile Offcanvas -->
-    <div class="offcanvas offcanvas-end offcanvas-dark" tabindex="-1" id="offcanvasNavbar">
-        <div class="offcanvas-header">
-            <h5 class="offcanvas-title footer-brand-name">ARC<span>VANTAGE</span></h5>
-            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
-        </div>
-        <div class="offcanvas-body">
-            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                <li class="nav-item"><a class="nav-link" href="index.html">Home 1</a></li>
-                <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-                <li class="nav-item mt-3"><a href="login.html" class="btn btn-brand-secondary w-100">Login</a></li>
-            </ul>
-        </div>
-    </div>
-
     <div class="auth-wrapper position-relative">
         <div class="hero-overlay hero-bg-main" style="opacity: 0.1;"></div>
         <div class="auth-card animate-fade-up position-relative z-1">
+            <div id="themeToggle" class="position-absolute top-0 end-0 m-3 cursor-pointer fs-5 text-muted"><i class="bi bi-moon-fill"></i></div>
+
             <div class="text-center mb-4">
-                <a href="index.html" class="navbar-brand fs-2 text-primary-brand justify-content-center">
+                <a href="index.html" class="navbar-brand text-primary-brand m-0 fs-3 justify-content-center mb-3">
                     <i class="bi bi-bridge-fill text-secondary-brand"></i>
                     ARC<span>VANTAGE</span>
                 </a>
-                <h2 class="mt-3">Client Login</h2>
+                <h2 class="mt-2 text-primary-brand">Client Login</h2>
                 <p class="text-muted small">Access your secure engineering portal</p>
             </div>
 
@@ -89,7 +40,7 @@
                         <input class="form-check-input" type="checkbox" id="remember">
                         <label class="form-check-label small" for="remember">Remember me</label>
                     </div>
-                    <a href="#" class="small text-primary-brand fw-bold text-decoration-none">Forgot?</a>
+                    <a href="#" class="small text-primary-brand fw-bold text-decoration-none">Forgot Password?</a>
                 </div>
                 <button type="submit" class="btn btn-brand-primary w-100 py-2">Sign In to Hub</button>
             </form>
@@ -107,14 +58,59 @@
 
             <div class="text-center mt-4">
                 <p class="small text-muted">New department client? <a href="signup.html" class="text-secondary-brand fw-bold text-decoration-none">Register Hub</a></p>
-                <a href="index.html" class="btn btn-link btn-sm text-muted mt-2 text-decoration-none"><i class="bi bi-arrow-left"></i> Back to Home</a>
             </div>
         </div>
     </div>
 
+    <!-- Footer -->
+    <footer class="brand-footer">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-4">
+                    <div class="footer-brand-name">ARC<span>VANTAGE</span></div>
+                    <p class="footer-desc mt-3">Specialized structural engineering firm with an authoritative focus on bridge design, infrastructure integrity, and government compliance documentation.</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="bi bi-linkedin"></i></a>
+                        <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <h5>Quick Menu</h5>
+                    <a href="index.html">Home 1</a>
+                    <a href="home2.html">Home 2</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Our Services</a>
+                    <a href="contact.html">Contact Us</a>
+                </div>
+                <div class="col-md-4 col-lg-2">
+                    <h5>Engineering Hub</h5>
+                    <a href="dashboard.html">Client Portal</a>
+                    <a href="login.html">Firm Login</a>
+                    <a href="signup.html">Join Tenders</a>
+                    <a href="#">Compliance Docs</a>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Technical Newsletter</h5>
+                    <p class="small text-muted mb-3">Subscribe to receive technical engineering whitepapers and project updates.</p>
+                    <form class="footer-newsletter">
+                        <input type="email" placeholder="Enter engineering email..." required>
+                        <button type="submit" class="btn btn-brand-secondary w-100">Subscribe Hub</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p class="mb-0">© 2026 ArcVantage Structural Engineering Firm. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 
+    <!-- Back to Top -->
+    <a href="#" class="back-to-top" id="backToTop"><i class="bi bi-arrow-up"></i></a>
 
     <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
 </html>

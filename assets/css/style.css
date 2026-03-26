@@ -65,9 +65,14 @@ h1,h2,h3,h4,h5,h6 {
   color: var(--text-main);
   line-height: 1.2;
 }
-.text-primary-brand { color: var(--primary) !important; }
-.text-secondary-brand { color: var(--secondary) !important; }
-.text-tertiary-brand { color: var(--tertiary) !important; }
+.text-primary-brand { color: var(--primary) !important; transition: var(--transition); }
+.text-secondary-brand { color: var(--secondary) !important; transition: var(--transition); }
+.text-tertiary-brand { color: var(--tertiary) !important; transition: var(--transition); }
+
+.text-primary-brand:hover, .text-secondary-brand:hover, .text-tertiary-brand:hover {
+  text-decoration: underline !important;
+  opacity: 0.85;
+}
 
 /* ---- Buttons ---- */
 .btn-brand-primary {
@@ -82,6 +87,7 @@ h1,h2,h3,h4,h5,h6 {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.4rem;
 }
 .btn-brand-primary:hover {
@@ -103,6 +109,7 @@ h1,h2,h3,h4,h5,h6 {
   text-decoration: none;
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.4rem;
 }
 .btn-brand-secondary:hover {
@@ -535,6 +542,7 @@ h1,h2,h3,h4,h5,h6 {
 [data-theme="dark"] ::-ms-input-placeholder { color: var(--text-muted) !important; }
 
 [data-theme="dark"] .bg-light { background-color: var(--bg) !important; color: var(--text-main) !important; }
+[data-theme="dark"] .bg-white { background-color: var(--bg-card) !important; color: var(--text-main) !important; }
 [data-theme="dark"] .text-muted { color: var(--text-muted) !important; }
 [data-theme="dark"] .form-control { background-color: var(--bg); border-color: var(--border); color: var(--text-main); }
 [data-theme="dark"] .form-control:focus { background-color: var(--bg-card); color: var(--text-main); }
@@ -552,9 +560,11 @@ h1,h2,h3,h4,h5,h6 {
   color: var(--text-main);
   font-weight: 600;
   font-size: 0.9rem;
-  cursor: pointer;
-  transition: var(--transition);
-  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
 }
 .social-login-btn:hover { border-color: var(--primary); color: var(--primary); background: rgba(26,47,90,0.05); }
 .auth-divider {
@@ -727,12 +737,36 @@ h1,h2,h3,h4,h5,h6 {
 .progress-brand .progress-bar { background: var(--secondary); border-radius: 4px; }
 
 /* ---- Partner Logos Strip ---- */
+.partner-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  transition: var(--transition);
+  box-shadow: var(--shadow);
+}
+.partner-card:hover {
+  border-color: var(--secondary);
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
 .partner-logo {
   transition: var(--transition);
-  max-height: 55px;
+  max-height: 90px;
+  max-width: 100%;
   object-fit: contain;
+  filter: grayscale(1);
+  opacity: 0.7;
 }
-.partner-logo:hover { transform: scale(1.1); }
+.partner-card:hover .partner-logo {
+  filter: grayscale(0);
+  opacity: 1;
+  transform: scale(1.05);
+}
 
 /* ---- Testimonial Cards ---- */
 .testimonial-card {
@@ -740,21 +774,54 @@ h1,h2,h3,h4,h5,h6 {
   border-radius: var(--radius-lg);
   border: 1px solid var(--border);
   box-shadow: var(--shadow);
-  padding: 2rem;
+  padding: 2rem 2.5rem 2.5rem;
   position: relative;
   transition: var(--transition);
 }
 .testimonial-card::before {
   content: '\201C';
-  position: absolute;
-  top: 1rem; left: 1.5rem;
-  font-size: 5rem;
+  display: block;
+  position: relative;
+  top: 0; left: 0;
+  font-size: 4rem;
   font-family: Georgia, serif;
   color: var(--secondary);
-  opacity: 0.25;
-  line-height: 1;
+  opacity: 0.35;
+  line-height: 0.8;
+  margin-bottom: 0.5rem;
 }
-.testimonial-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); }
+.testimonial-card:hover { 
+  box-shadow: var(--shadow-hover); 
+  transform: translateY(-4px); 
+  border-color: var(--secondary);
+}
+.testimonial-card p {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--text-main);
+  font-style: italic;
+  margin-bottom: 2rem !important;
+}
+.testimonial-card .d-flex.align-items-center {
+  justify-content: center;
+}
+.testimonial-card h6 {
+  text-align: center;
+}
+.testimonial-card small {
+  text-align: center;
+  display: block;
+}
+
+.testimonial-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--secondary);
+  flex-shrink: 0;
+}
+
 
 /* ---- Offcanvas Dark ---- */
 .offcanvas-dark {
@@ -825,4 +892,95 @@ h1,h2,h3,h4,h5,h6 {
   border-radius: 14px;
   display: inline-flex; align-items: center; justify-content: center;
   font-size: 1.5rem;
+}
+
+/* ---- RTL Toggle Button ---- */
+#rtlToggle {
+  background: rgba(255,255,255,0.1);
+  border: 1.5px solid rgba(255,255,255,0.3);
+  color: #fff;
+  border-radius: 50px;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 1.1rem;
+}
+#rtlToggle:hover {
+  background: var(--secondary);
+  border-color: var(--secondary);
+}
+
+/* ---- Our Credentials section contrast fix ---- */
+.section-pad.bg-white h6,
+.section-pad.bg-white h2 {
+  color: var(--text-main);
+}
+[data-theme="dark"] .section-pad.bg-white .section-label {
+  color: var(--secondary);
+}
+
+/* ---- Technical Visionaries cards dark mode fix ---- */
+[data-theme="dark"] .brand-card h5 {
+  color: var(--text-main);
+}
+[data-theme="dark"] .brand-card p {
+  color: var(--text-muted) !important;
+}
+[data-theme="dark"] .brand-card .text-secondary-brand {
+  color: var(--secondary) !important;
+}
+
+/* ---- Signup "Login Here" dark mode contrast ---- */
+[data-theme="dark"] .auth-card .text-primary-brand {
+  color: var(--secondary) !important;
+}
+
+/* ---- Signup Role select fix ---- */
+.auth-card .form-select {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.65rem 2.25rem 0.65rem 1rem;
+  color: var(--text-main);
+  transition: var(--transition);
+  appearance: auto;
+  -webkit-appearance: auto;
+  -moz-appearance: auto;
+}
+.auth-card .form-select:focus {
+  border-color: var(--secondary);
+  box-shadow: 0 0 0 3px rgba(200,146,42,0.15);
+}
+
+/* ---- Navbar badge for Sign Up ---- */
+.signup-badge {
+  position: relative;
+}
+.signup-badge .badge {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  font-size: 0.6rem;
+  padding: 0.2rem 0.45rem;
+  border-radius: 50px;
+  background: var(--secondary);
+  color: #fff;
+  font-weight: 700;
+  line-height: 1;
+}
+
+/* ---- Uniform button badge sizes ---- */
+.btn.lg {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+}
+
+/* ---- Footer Subscribe Hub text center ---- */
+.footer-newsletter .btn {
+  text-align: center;
+  justify-content: center;
 }

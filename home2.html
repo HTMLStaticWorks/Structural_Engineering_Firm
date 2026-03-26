@@ -37,9 +37,10 @@
                             <a href="login.html" class="btn btn-outline-light btn-sm px-4">Login</a>
                         </li>
                         <li class="nav-item ms-2">
-                            <a href="signup.html" class="btn btn-secondary-brand btn-sm px-4 text-white">Sign Up</a>
+                            <a href="signup.html" class="btn btn-secondary-brand btn-sm px-4 text-white signup-badge">Sign Up <span class="badge">New</span></a>
                         </li>
                     </ul>
+                    <div id="rtlToggle" class="ms-lg-3" title="Toggle RTL"><i class="bi bi-translate"></i></div>
                     <div id="themeToggle" class="ms-lg-3"><i class="bi bi-moon-fill"></i></div>
                 </div>
             </div>
@@ -143,11 +144,31 @@
                 <h2 class="section-title">Global Technical Partners</h2>
             </div>
             <div class="row align-items-center justify-content-center g-4 mt-2">
-                <div class="col-4 col-md-2"><img src="assets/images/logos/logo1.png" class="partner-logo img-fluid px-3" alt="Partner"></div>
-                <div class="col-4 col-md-2"><img src="assets/images/logos/logo2.png" class="partner-logo img-fluid px-3" alt="Partner"></div>
-                <div class="col-4 col-md-2"><img src="assets/images/logos/logo3.png" class="partner-logo img-fluid px-3" alt="Partner"></div>
-                <div class="col-4 col-md-2"><img src="assets/images/logos/logo6.png" class="partner-logo img-fluid px-3" alt="Partner"></div>
-                <div class="col-4 col-md-2"><img src="assets/images/logos/logo1.png" class="partner-logo img-fluid px-3" alt="Partner" style="filter: hue-rotate(120deg)"></div>
+                <div class="col-6 col-md-2">
+                    <div class="partner-card">
+                        <img src="assets/images/logos/logo1.png" class="partner-logo" alt="Partner">
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="partner-card">
+                        <img src="assets/images/logos/logo2.png" class="partner-logo" alt="Partner">
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="partner-card">
+                        <img src="assets/images/logos/logo3.png" class="partner-logo" alt="Partner">
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="partner-card">
+                        <img src="assets/images/logos/logo6.png" class="partner-logo" alt="Partner">
+                    </div>
+                </div>
+                <div class="col-6 col-md-2">
+                    <div class="partner-card">
+                        <img src="assets/images/logos/logo1.png" class="partner-logo" alt="Partner" style="filter: hue-rotate(120deg)">
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -161,17 +182,27 @@
             </div>
             <div class="row g-4">
                 <div class="col-md-6">
-                    <div class="testimonial-card">
-                        <p class="text-on-dark mb-3">"Our infrastructure relies on the technical rigor provided by ArcVantage. Their documentation for bridge inspections has set a new standard for public safety."</p>
-                        <h6 class="mb-0 text-primary-brand">James Harder</h6>
-                        <small class="text-muted">Federal Bridge Admin</small>
+                    <div class="testimonial-card h-100 d-flex flex-column">
+                        <p class="mb-4 text-muted" style="line-height: 1.8;">"Our critical infrastructure relies on the technical rigor provided by ArcVantage. Their specialized documentation for federal bridge inspections has set a new standard for public safety, streamlining our state-level compliance auditing process significantly. A truly essential partner for complex oversight."</p>
+                        <div class="d-flex align-items-center gap-3 mt-auto">
+                            <img src="assets/images/profile.png" class="testimonial-img" alt="James Harder">
+                            <div>
+                                <h6 class="mb-0 text-primary-brand">James Harder</h6>
+                                <small class="text-muted">Federal Bridge Admin</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="testimonial-card">
-                        <p class="text-on-dark mb-3">"The seismic design provided for our coastal crossings withstand extreme forces. A truly authoritative firm in the structural space."</p>
-                        <h6 class="mb-0 text-primary-brand">Linda V.</h6>
-                        <small class="text-muted">Port Authority Engineering</small>
+                    <div class="testimonial-card h-100 d-flex flex-column">
+                        <p class="mb-4 text-muted" style="line-height: 1.8;">"The innovative seismic structural design and advanced BIM modeling provided for our major coastal crossings allow our structures to withstand extreme environmental forces. Their authoritative approach in the structural engineering space provides us with extreme long-term confidence."</p>
+                        <div class="d-flex align-items-center gap-3 mt-auto">
+                            <img src="assets/images/profile.png" class="testimonial-img" alt="Linda V." style="filter: hue-rotate(90deg)">
+                            <div>
+                                <h6 class="mb-0 text-primary-brand">Linda V.</h6>
+                                <small class="text-muted">Port Authority Engineering</small>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -188,24 +219,32 @@
                     <div class="social-icons mt-4">
                         <a href="#"><i class="bi bi-linkedin"></i></a>
                         <a href="#"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#"><i class="bi bi-facebook"></i></a>
+                        <a href="#"><i class="bi bi-youtube"></i></a>
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-2">
-                    <h5>Links</h5>
+                    <h5>Quick Menu</h5>
                     <a href="index.html">Home 1</a>
-                    <a href="services.html">Services</a>
-                    <a href="dashboard.html">Dashboard</a>
+                    <a href="home2.html">Home 2</a>
+                    <a href="about.html">About Us</a>
+                    <a href="services.html">Our Services</a>
+                    <a href="contact.html">Contact Us</a>
                 </div>
                 <div class="col-md-4 col-lg-2">
-                    <h5>Firm</h5>
-                    <a href="#">Careers</a>
-                    <a href="#">Tech Blog</a>
-                    <a href="#">Contact</a>
+                    <h5>Engineering Hub</h5>
+                    <a href="dashboard.html">Client Portal</a>
+                    <a href="login.html">Firm Login</a>
+                    <a href="signup.html">Join Tenders</a>
+                    <a href="#">Compliance Docs</a>
                 </div>
                 <div class="col-lg-4">
-                    <h5>Gov Clients Hub</h5>
-                    <p class="small text-muted mb-3">Secure portal for drawing access.</p>
-                    <a href="login.html" class="btn btn-brand-primary w-100">Access Portal</a>
+                    <h5>Technical Newsletter</h5>
+                    <p class="small text-muted mb-3">Subscribe to receive technical engineering whitepapers and project updates.</p>
+                    <form class="footer-newsletter">
+                        <input type="email" placeholder="Enter engineering email..." required>
+                        <button type="submit" class="btn btn-brand-secondary w-100">Subscribe Hub</button>
+                    </form>
                 </div>
             </div>
             <div class="footer-bottom text-center">

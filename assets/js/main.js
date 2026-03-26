@@ -33,6 +33,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // ---- RTL Toggle Logic ----
+    const rtlToggle = document.getElementById('rtlToggle');
+    const savedDir = localStorage.getItem('dir') || 'ltr';
+    document.documentElement.setAttribute('dir', savedDir);
+
+    if (rtlToggle) {
+        rtlToggle.addEventListener('click', () => {
+            let currentDir = document.documentElement.getAttribute('dir');
+            let newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
+            document.documentElement.setAttribute('dir', newDir);
+            localStorage.setItem('dir', newDir);
+        });
+    }
+
     // ---- Back to Top Button ----
     const backToTopBtn = document.getElementById('backToTop');
     window.addEventListener('scroll', () => {
