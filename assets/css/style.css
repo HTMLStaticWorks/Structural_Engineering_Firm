@@ -211,6 +211,21 @@ h1,h2,h3,h4,h5,h6 {
   margin-bottom: 0.75rem;
 }
 
+.navbar-brand {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  display: flex !important;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  transition: var(--transition);
+  color: var(--primary);
+}
+.navbar-brand span { color: var(--secondary); }
+.navbar-brand:hover { opacity: 0.85; }
+
 /* ---- Navbar ---- */
 .brand-navbar {
   background: var(--bg-navbar) !important;
