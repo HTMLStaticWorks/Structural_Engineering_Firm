@@ -823,6 +823,9 @@ h1,h2,h3,h4,h5,h6 {
 .testimonial-card h6 {
   text-align: center;
 }
+[data-theme="dark"] .testimonial-card .text-primary-brand {
+  color: var(--secondary) !important;
+}
 .testimonial-card small {
   text-align: center;
   display: block;
