@@ -24,25 +24,28 @@
                 ARC<span>VANTAGE</span>
             </a>
             
-            <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
-                <i class="bi bi-list fs-1"></i>
-            </button>
+            <div class="d-flex align-items-center gap-2">
+                <a href="login.html" class="btn btn-brand-secondary btn-sm px-3 text-white d-lg-none">Login</a>
+                <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar">
+                    <i class="bi bi-list fs-1"></i>
+                </button>
+            </div>
 
             <!-- Desktop Menu -->
             <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
                         <li class="nav-item"><a class="nav-link active" href="index.html">Home 1</a></li>
                         <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                         <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                         <li class="nav-item ms-lg-3">
                             <a href="login.html" class="btn btn-brand-secondary btn-sm px-4 text-white">Login</a>
                         </li>
                     </ul>
-                    <div id="rtlToggle" class="ms-lg-3" title="Toggle RTL"><i class="bi bi-translate"></i></div>
-                    <div id="themeToggle" class="ms-lg-3"><i class="bi bi-moon-fill"></i></div>
+                    <div class="themeToggle ms-lg-3" title="Toggle Theme"><i class="bi bi-moon-fill"></i></div>
+                    <div class="rtlToggle ms-lg-3" title="Toggle RTL"><i class="bi bi-translate"></i></div>
                 </div>
             </div>
         </div>
@@ -51,33 +54,37 @@
     <!-- Mobile Offcanvas -->
     <div class="offcanvas offcanvas-end offcanvas-dark" tabindex="-1" id="offcanvasNavbar">
         <div class="offcanvas-header">
-            <h5 class="offcanvas-title footer-brand-name">ARC<span>VANTAGE</span></h5>
+            <h5 class="offcanvas-title footer-brand-name d-flex align-items-center"><img src="assets/images/favicon.png" alt="ArcVantage" class="brand-logo-img me-2">ARC<span>VANTAGE</span></h5>
             <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
         </div>
         <div class="offcanvas-body">
             <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item"><a class="nav-link active" href="index.html">Home 1</a></li>
                 <li class="nav-item"><a class="nav-link" href="home2.html">Home 2</a></li>
-                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
                 <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                 <li class="nav-item mt-3"><a href="login.html" class="btn btn-brand-secondary w-100 text-white">Login</a></li>
             </ul>
+            <div class="d-flex gap-3 mt-4 justify-content-center pt-4 border-top border-white border-opacity-10">
+                <div class="themeToggle mobile-toggle" title="Toggle Theme"><i class="bi bi-moon-fill"></i></div>
+                <div class="rtlToggle mobile-toggle" title="Toggle RTL"><i class="bi bi-translate"></i></div>
+            </div>
         </div>
     </div>
 
     <!-- Hero Section -->
     <section class="hero-section text-white">
         <!-- Using custom inline background to bypass repeated CSS backgrounds -->
-        <div class="hero-overlay" style="background-image: url('https://loremflickr.com/1920/1080/bridge,design?random=1'); opacity: 0.3;"></div>
+        <div class="hero-overlay" style="background-image: url('assets/images/hero.png'); opacity: 0.3;"></div>
         <div class="container position-relative z-2 text-center">
             <div class="row justify-content-center">
                 <div class="col-lg-10 col-xl-8">
                     <span class="section-label animate-fade-up">Global Bridge Specialists</span>
                     <h1 class="animate-fade-up animate-delay-1">Engineering the <span>Infrastructures</span> of Tomorrow</h1>
                     <p class="mt-4 animate-fade-up animate-delay-2 mx-auto" style="max-width: 700px;">A specialized firm focused exclusively on the architectural design and structural planning of new, monumental bridge infrastructure for government sectors.</p>
-                    <div class="mt-5 d-flex flex-wrap gap-3 animate-fade-up animate-delay-3 justify-content-center">
+                    <div class="mt-5 d-flex flex-wrap gap-3 animate-fade-up animate-delay-3 justify-content-center hero-btns-wrap">
                         <a href="#projects" class="btn btn-brand-secondary lg">Explore New Builds</a>
                         <a href="services.html" class="btn btn-brand-outline-light lg">Engineering Services</a>
                     </div>
@@ -153,7 +160,7 @@
                 </div>
                 <div class="col-lg-6">
                     <div class="brand-card p-2">
-                        <img src="https://loremflickr.com/800/800/engineering,team?random=2" alt="Engineering Team" class="img-fluid rounded shadow">
+                        <img src="assets/images/construction.png" alt="Structural Engineering" class="img-fluid rounded shadow">
                     </div>
                 </div>
             </div>
@@ -168,10 +175,10 @@
                 <h2 class="section-title">Landmark Infrastructure Projects</h2>
                 <p class="section-subtitle">Showcasing our precision engineering in some of the most challenging environments on Earth.</p>
             </div>
-            <div class="row g-4">
+            <div class="row g-4 justify-content-center">
                 <div class="col-md-4">
                     <div class="project-card">
-                        <img src="https://loremflickr.com/800/600/bridge,suspension?random=3" alt="Suspension Bridge Project">
+                        <img src="assets/images/construction.png" alt="Suspension Bridge Project">
                         <div class="project-info">
                             <div class="project-category">Suspension Bridge</div>
                             <h5 class="mt-2 mb-0">The Golden Link Bridge</h5>
@@ -180,7 +187,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="project-card">
-                        <img src="https://loremflickr.com/800/600/viaduct,bridge?random=4" alt="Viaduct Project">
+                        <img src="assets/images/hero.png" alt="Viaduct Project">
                         <div class="project-info">
                             <div class="project-category">Viaduct Design</div>
                             <h5 class="mt-2 mb-0">Mountain Skyway Viaduct</h5>
@@ -189,7 +196,7 @@
                 </div>
                 <div class="col-md-4">
                     <div class="project-card">
-                        <img src="https://loremflickr.com/800/600/cable,bridge?random=5" alt="Cable Stayed Project">
+                        <img src="assets/images/maintenance.png" alt="Cable Stayed Project">
                         <div class="project-info">
                             <div class="project-category">Cable-Stayed</div>
                             <h5 class="mt-2 mb-0">Metro Cable Crossing</h5>
@@ -251,7 +258,7 @@
                     <div class="testimonial-card h-100 d-flex flex-column">
                         <p class="mb-4 text-muted">"The structural integrity analysis provided for the Grand Valley Bridge was beyond technical compliance. Their team showed immense foresight in seismic resilience, providing detailed feasibility reports that were crucial for our department. A truly essential partner for state-level engineering oversight."</p>
                         <div class="d-flex align-items-center gap-3 mt-auto">
-                            <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=150&h=150&auto=format&fit=crop" class="testimonial-img" alt="Dr. Robert Chen">
+                            <img src="assets/images/profile.png" class="testimonial-img" alt="Dr. Robert Chen">
                             <div>
                                 <h6 class="mb-0 text-primary-brand">Dr. Robert Chen</h6>
                                 <small class="text-muted">Dept of Transportation (DOT)</small>
@@ -263,7 +270,7 @@
                     <div class="testimonial-card h-100 d-flex flex-column">
                         <p class="mb-4 text-muted">"Transparent reporting and exceptional engineering drawings. Their digital portal for real-time inspection access is a game-changer for government audits, ensuring we have immediate visibility into every structural detail and compliance metric."</p>
                         <div class="d-flex align-items-center gap-3 mt-auto">
-                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=150&h=150&auto=format&fit=crop" class="testimonial-img" alt="Sarah Miller">
+                            <img src="assets/images/profile.png" class="testimonial-img" alt="Sarah Miller">
                             <div>
                                 <h6 class="mb-0 text-primary-brand">Sarah Miller</h6>
                                 <small class="text-muted">Chief Infrastructure Officer</small>
@@ -280,7 +287,7 @@
         <div class="container">
             <div class="row g-5">
                 <div class="col-lg-4">
-                    <div class="footer-brand-name">ARC<span>VANTAGE</span></div>
+                    <div class="footer-brand-name"><img src="assets/images/favicon.png" alt="ArcVantage" class="brand-logo-img me-2">ARC<span>VANTAGE</span></div>
                     <p class="footer-desc mt-3">Specialized structural engineering firm with an authoritative focus on bridge design, infrastructure integrity, and government compliance documentation.</p>
                     <div class="social-icons mt-4">
                         <a href="#"><i class="bi bi-linkedin"></i></a>
