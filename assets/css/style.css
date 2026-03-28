@@ -98,8 +98,9 @@ h1,h2,h3,h4,h5,h6 {
   background: var(--primary-light);
   border-color: var(--primary-light);
   color: #fff;
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(26,47,90,0.35);
+  filter: brightness(1.15);
 }
 .btn-brand-secondary {
   background: var(--secondary);
@@ -120,8 +121,9 @@ h1,h2,h3,h4,h5,h6 {
   background: var(--secondary-dark);
   border-color: var(--secondary-dark);
   color: #fff;
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(200,146,42,0.4);
+  filter: brightness(1.15);
 }
 .btn-brand-outline {
   background: transparent;
@@ -140,8 +142,9 @@ h1,h2,h3,h4,h5,h6 {
 .btn-brand-outline:hover {
   background: var(--primary);
   color: #fff;
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-hover);
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(26,47,90,0.35);
+  filter: brightness(1.15);
 }
 .btn-brand-outline-light {
   background: transparent;
@@ -158,9 +161,22 @@ h1,h2,h3,h4,h5,h6 {
   gap: 0.4rem;
 }
 .btn-brand-outline-light:hover {
-  background: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.2);
   color: #fff;
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 8px 25px rgba(255,255,255,0.15);
+}
+
+/* ---- Global Button Hover Highlight ---- */
+.btn:hover {
   transform: translateY(-2px);
+  filter: brightness(1.1);
+  transition: var(--transition);
+}
+.social-login-btn:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(26,47,90,0.15);
+  filter: brightness(1.05);
 }
 
 /* ---- Cards ---- */
