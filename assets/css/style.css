@@ -609,6 +609,14 @@ h1,h2,h3,h4,h5,h6 {
 [data-theme="dark"] .form-control { background-color: var(--bg); border-color: var(--border); color: var(--text-main); }
 [data-theme="dark"] .form-control:focus { background-color: var(--bg-card); color: var(--text-main); }
 [data-theme="dark"] select.form-select { background-color: var(--bg); color: var(--text-main); border-color: var(--border); }
+
+/* Ensure social icons in cards remain visible in dark mode */
+[data-theme="dark"] .brand-card .text-primary-brand {
+    color: var(--secondary) !important;
+}
+[data-theme="dark"] .brand-card .text-primary-brand:hover {
+    color: white !important;
+}
 .social-login-btn {
   display: flex;
   align-items: center;
