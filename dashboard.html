@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard - ArcVantage Client Portal</title>
+    <title>Dashboard - ArcVantage Professional Portal</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
     
@@ -14,238 +14,303 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
-<body>
+<body class="bg-light">
 
     <div class="dashboard-wrapper">
-        <aside class="dash-sidebar">
-            <div class="sidebar-brand text-center">
+        <!-- Sidebar -->
+        <aside class="dash-sidebar d-flex flex-column">
+            <div class="sidebar-brand text-center py-4">
                 <a href="index.html" class="sidebar-brand-name text-decoration-none d-flex align-items-center justify-content-center">
                     <img src="assets/images/favicon.png" alt="ArcVantage" class="brand-logo-img me-2">
-                    ARC<span>VANTAGE</span>
+                    <span class="fw-bold">ARC<span class="text-secondary-brand">VANTAGE</span></span>
                 </a>
-                <span class="sidebar-brand-sub">Gov Client Portal</span>
+                <span class="sidebar-brand-sub opacity-50 small mt-1">GOV CLIENT PORTAL</span>
             </div>
 
             <nav class="flex-grow-1 p-3">
-                <div class="nav-section-label">ANALYTICS HUB</div>
-                <a href="#analytics" class="nav-link active"><i class="bi bi-grid-1x2-fill"></i> Analytics Hub</a>
-                <a href="#projects" class="nav-link"><i class="bi bi-bridge"></i> Active Projects</a>
-                <a href="#teams" class="nav-link"><i class="bi bi-people-fill"></i> Project Teams</a>
+                <div class="nav-section-label mb-2 opacity-50 px-3 small fw-bold">MASTER HUB</div>
+                <a href="#analytics" class="nav-link active py-3 px-3 rounded-3 mb-1"><i class="bi bi-speedometer2 me-2"></i> Dashboard Overview</a>
+                <a href="#projects" class="nav-link py-3 px-3 rounded-3 mb-1"><i class="bi bi-stack me-2"></i> Project Portfolio</a>
                 
-                <div class="nav-section-label mt-4">ENGINEERING DATA</div>
-                <a href="#reports" class="nav-link"><i class="bi bi-clipboard2-check"></i> Inspection Reports</a>
-                <a href="#compliance" class="nav-link"><i class="bi bi-shield-lock-fill"></i> Compliance Docs</a>
-                <a href="#drawings" class="nav-link"><i class="bi bi-file-earmark-ruled"></i> Technical Drawings</a>
-                <a href="#tenders" class="nav-link"><i class="bi bi-file-earmark-text-fill"></i> Active Tenders</a>
-
-                <div class="nav-section-label mt-4">COMMUNICATION</div>
-                <a href="#messages" class="nav-link"><i class="bi bi-chat-right-dots-fill"></i> Messages <span class="badge bg-secondary-brand ms-auto">3</span></a>
-                <a href="contact.html" class="nav-link"><i class="bi bi-headset"></i> Support Hub</a>
-
-                <div class="nav-section-label mt-4">PORTAL CONTEXT</div>
-                <a href="index.html" class="nav-link opacity-75 small"><i class="bi bi-arrow-left-circle"></i> Exit to Public Site</a>
-                <a href="index.html" class="nav-link mt-2"><i class="bi bi-box-arrow-left"></i> Logout Account</a>
+                <div class="nav-section-label mt-4 mb-2 opacity-50 px-3 small fw-bold">ENGINEERING CORE</div>
+                <a href="#reports" class="nav-link py-3 px-3 rounded-3 mb-1"><i class="bi bi-clipboard-pulse me-2"></i> Audit Intelligence</a>
+                <a href="#compliance" class="nav-link py-3 px-3 rounded-3 mb-1"><i class="bi bi-shield-check me-2"></i> Compliance Vault</a>
+                <a href="#drawings" class="nav-link py-3 px-3 rounded-3 mb-1"><i class="bi bi-layers-half me-2"></i> Technical Assets</a>
+                
+                <div class="nav-section-label mt-4 mb-2 opacity-50 px-3 small fw-bold">SYSTEM</div>
+                <a href="#messages" class="nav-link py-3 px-3 rounded-3 mb-1 d-flex justify-content-between">
+                    <span><i class="bi bi-envelope-paper me-2"></i> Messages</span>
+                    <span class="badge bg-secondary-brand text-white rounded-pill">3</span>
+                </a>
+                <a href="contact.html" class="nav-link py-3 px-3 rounded-3 mb-1"><i class="bi bi-headset me-2"></i> Support Hub</a>
             </nav>
 
-            <div class="mt-auto p-3 border-top border-white border-opacity-10 text-center">
-                <div id="themeToggle" class="mx-auto"><i class="bi bi-moon-fill"></i></div>
-                <p class="small text-white text-opacity-50 mt-2 mb-0">Portal Version 2.4.1</p>
+            <div class="mt-auto p-4 border-top border-white border-opacity-10">
+                <div class="d-flex align-items-center gap-3 mb-4">
+                    <img src="https://loremflickr.com/100/100/engineer,face?random=99" class="rounded-circle border border-2 border-secondary" width="45" alt="User">
+                    <div class="overflow-hidden">
+                        <h6 class="mb-0 text-white text-truncate">Dr. Robert Chen</h6>
+                        <small class="text-secondary-brand small fw-bold">Portal Admin</small>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between align-items-center">
+                    <div id="themeToggle" class="bg-white bg-opacity-10 p-2 rounded-circle cursor-pointer"><i class="bi bi-moon-stars"></i></div>
+                    <a href="index.html" class="btn btn-sm btn-outline-light border-0 opacity-75"><i class="bi bi-box-arrow-left"></i> Logout</a>
+                </div>
             </div>
         </aside>
 
         <!-- Main Content -->
-        <main class="dash-main">
-            <!-- Top Bar -->
-            <div class="dash-topbar">
+        <main class="dash-main p-4 p-lg-5">
+            <!-- Header -->
+            <header class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-4 mb-5">
                 <div>
-                    <h4 class="fw-bold mb-0">Project Overview</h4>
-                    <p class="text-muted small mb-0">State Department of Transportation - Region 4 Hub</p>
+                    <h2 class="fw-bold mb-1">Infrastructure Command</h2>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mb-0">
+                            <li class="breadcrumb-item"><a href="#" class="text-decoration-none text-muted">Portal</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                        </ol>
+                    </nav>
                 </div>
                 <div class="d-flex align-items-center gap-3">
-                    <button class="btn btn-outline-secondary btn-sm d-lg-none" id="sidebarToggle"><i class="bi bi-list fs-5"></i></button>
-                    <div class="d-flex align-items-center gap-2">
-                        <div class="text-end d-none d-sm-block">
-                            <h6 class="mb-0 small fw-bold">Dr. Robert Chen</h6>
-                            <small class="text-muted">Chief Structural Auditor</small>
-                        </div>
-                        <img src="https://loremflickr.com/150/150/user,avatar?random=26" class="rounded-circle border border-2 border-secondary" width="40" height="40" alt="Profile">
+                    <div class="position-relative d-none d-lg-block">
+                        <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+                        <input type="text" class="form-control px-5 py-2 rounded-pill search-bar-dash" placeholder="Query projects or reports...">
                     </div>
+                    <div class="bg-white p-2 rounded-circle shadow-sm position-relative cursor-pointer">
+                        <i class="bi bi-bell text-primary fs-5"></i>
+                        <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+                    </div>
+                    <button class="btn btn-brand-primary rounded-pill px-4 d-none d-sm-block"><i class="bi bi-plus-lg me-2"></i> New Project</button>
+                    <button class="btn btn-outline-secondary d-lg-none" id="sidebarToggle"><i class="bi bi-list"></i></button>
                 </div>
-            </div>
+            </header>
 
-            <!-- KPI Cards -->
-            <div class="row g-4 mb-4" id="analytics">
+            <!-- Metrics Overview -->
+            <div class="row g-4 mb-5" id="analytics">
                 <div class="col-md-3">
                     <div class="kpi-card">
-                        <div class="kpi-label">Active Projects</div>
-                        <div class="kpi-value">12</div>
-                        <div class="small text-secondary-brand pt-2"><i class="bi bi-graph-up"></i> 2 newly added</div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="kpi-card" style="border-left-color: var(--tertiary);">
-                        <div class="kpi-label">Health Index</div>
-                        <div class="kpi-value">84%</div>
-                        <div class="progress progress-brand mt-2">
-                            <div class="progress-bar w-75"></div>
+                        <i class="bi bi-building kpi-icon"></i>
+                        <h6 class="text-muted fw-bold small text-uppercase mb-3">Managed Assets</h6>
+                        <h2 class="fw-bold mb-1">128</h2>
+                        <div class="trend-indicator trend-up">
+                            <i class="bi bi-arrow-up-right me-1"></i> +8.4% <span class="text-muted fw-normal ms-1">vs last quarter</span>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-3">
                     <div class="kpi-card">
-                        <div class="kpi-label">Pending Audits</div>
-                        <div class="kpi-value text-danger">04</div>
-                        <div class="small text-muted pt-2 text-primary-brand fw-bold">Due this week</div>
+                        <i class="bi bi-shield-check kpi-icon text-success"></i>
+                        <h6 class="text-muted fw-bold small text-uppercase mb-3">Audit Compliance</h6>
+                        <h2 class="fw-bold mb-1">98.2%</h2>
+                        <div class="trend-indicator trend-up">
+                            <i class="bi bi-check-circle me-1"></i> 100% Validated
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-3">
-                    <div class="kpi-card border-secondary">
-                        <div class="kpi-label">Tender Value</div>
-                        <div class="kpi-value">$248M</div>
-                        <div class="small text-muted pt-2">FY 2026 Budget</div>
+                    <div class="kpi-card">
+                        <i class="bi bi-clock-history kpi-icon text-warning"></i>
+                        <h6 class="text-muted fw-bold small text-uppercase mb-3">Active Reviews</h6>
+                        <h2 class="fw-bold mb-1">14</h2>
+                        <div class="trend-indicator trend-down">
+                            <i class="bi bi-exclamation-circle me-1"></i> 3 Critical Tasks
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="kpi-card">
+                        <i class="bi bi-currency-dollar kpi-icon text-secondary-brand"></i>
+                        <h6 class="text-muted fw-bold small text-uppercase mb-3">Tender Pipeline</h6>
+                        <h2 class="fw-bold mb-1">$412M</h2>
+                        <div class="trend-indicator trend-up">
+                            <i class="bi bi-arrow-up-right me-1"></i> +12% growth
+                        </div>
                     </div>
                 </div>
             </div>
 
+            <!-- Main Content Area -->
             <div class="row g-4">
-                <!-- Engineering Drawings Section -->
-                <div class="col-lg-8" id="drawings">
-                    <div class="dash-section">
-                        <div class="dash-section-title">
-                            <i class="bi bi-rulers"></i> Technical Drawings & Blueprints
+                <!-- Project Progress -->
+                <div class="col-lg-8" id="projects">
+                    <div class="dash-widget">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="fw-bold mb-0">Active Project Matrix</h5>
+                            <div class="dropdown">
+                                <button class="btn btn-sm btn-light border dropdown-toggle" type="button" data-bs-toggle="dropdown">Last 30 Days</button>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="#">All Time</a></li>
+                                    <li><a class="dropdown-item" href="#">This Quarter</a></li>
+                                </ul>
+                            </div>
                         </div>
                         <div class="table-responsive">
-                            <table class="table table-hover align-middle border-top">
-                                <thead class="table-light">
+                            <table class="table dash-table align-middle">
+                                <thead>
                                     <tr>
-                                        <th>Project / Drawing ID</th>
-                                        <th>Revision</th>
-                                        <th>Designer</th>
-                                        <th>Status</th>
+                                        <th>Infrastructure Unit</th>
+                                        <th>Engineer</th>
+                                        <th>Completion</th>
+                                        <th>Security Status</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr class="doc-row">
+                                    <tr>
                                         <td>
-                                            <div class="fw-bold">BR-741: Suspension Cables</div>
-                                            <small class="text-muted">Grand Valley Crossing</small>
+                                            <div class="d-flex align-items-center gap-3">
+                                                <div class="bg-primary bg-opacity-10 p-2 rounded-3 text-primary"><i class="bi bi-bridge fs-4"></i></div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-bold">Grand Valley Viaduct</h6>
+                                                    <small class="text-muted small">ID: GV-BR-2024</small>
+                                                </div>
+                                            </div>
                                         </td>
-                                        <td>v4.2</td>
-                                        <td>Smith J.</td>
-                                        <td><span class="badge bg-success bg-opacity-10 text-success">Approved</span></td>
-                                        <td><button class="btn btn-sm btn-brand-outline px-2 py-1"><i class="bi bi-download"></i></button></td>
+                                        <td class="small fw-semibold">L. Peterson</td>
+                                        <td style="width: 150px;">
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="progress flex-grow-1" style="height: 6px;">
+                                                    <div class="progress-bar bg-success" style="width: 85%;"></div>
+                                                </div>
+                                                <span class="small fw-bold">85%</span>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-chip status-active">Operational</span></td>
+                                        <td><button class="btn btn-sm btn-outline-secondary border-0"><i class="bi bi-three-dots-vertical"></i></button></td>
                                     </tr>
-                                    <tr class="doc-row">
+                                    <tr>
                                         <td>
-                                            <div class="fw-bold">BR-782: Foundation Piles</div>
-                                            <small class="text-muted">South River Viaduct</small>
+                                            <div class="d-flex align-items-center gap-3">
+                                                <div class="bg-secondary bg-opacity-10 p-2 rounded-3 text-secondary-brand"><i class="bi bi-buildings fs-4"></i></div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-bold">Seismic Retrofit B4</h6>
+                                                    <small class="text-muted small">ID: SR-BR-8101</small>
+                                                </div>
+                                            </div>
                                         </td>
-                                        <td>v2.1</td>
-                                        <td>Lee K.</td>
-                                        <td><span class="badge bg-warning text-dark bg-opacity-10">Review Req</span></td>
-                                        <td><button class="btn btn-sm btn-brand-outline px-2 py-1"><i class="bi bi-eye"></i></button></td>
+                                        <td class="small fw-semibold">K. Tanaka</td>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="progress flex-grow-1" style="height: 6px;">
+                                                    <div class="progress-bar bg-warning" style="width: 42%;"></div>
+                                                </div>
+                                                <span class="small fw-bold">42%</span>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-chip status-pending">In Review</span></td>
+                                        <td><button class="btn btn-sm btn-outline-secondary border-0"><i class="bi bi-three-dots-vertical"></i></button></td>
                                     </tr>
-                                    <tr class="doc-row">
+                                    <tr>
                                         <td>
-                                            <div class="fw-bold">BR-901: Seismic Joints</div>
-                                            <small class="text-muted">Coastal Metro Link</small>
+                                            <div class="d-flex align-items-center gap-3">
+                                                <div class="bg-info bg-opacity-10 p-2 rounded-3 text-info"><i class="bi bi-water fs-4"></i></div>
+                                                <div>
+                                                    <h6 class="mb-0 fw-bold">Marine Foundation Audit</h6>
+                                                    <small class="text-muted small">ID: MF-AU-0922</small>
+                                                </div>
+                                            </div>
                                         </td>
-                                        <td>v1.0</td>
-                                        <td>Brown A.</td>
-                                        <td><span class="badge bg-secondary bg-opacity-10 text-muted">Draft</span></td>
-                                        <td><button class="btn btn-sm btn-brand-outline px-2 py-1"><i class="bi bi-pencil"></i></button></td>
+                                        <td class="small fw-semibold">J. Smith</td>
+                                        <td>
+                                            <div class="d-flex align-items-center gap-2">
+                                                <div class="progress flex-grow-1" style="height: 6px;">
+                                                    <div class="progress-bar bg-danger" style="width: 12%;"></div>
+                                                </div>
+                                                <span class="small fw-bold">12%</span>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-chip status-danger">Critical Fix</span></td>
+                                        <td><button class="btn btn-sm btn-outline-secondary border-0"><i class="bi bi-three-dots-vertical"></i></button></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
-                        <div class="text-center pt-3">
-                            <a href="#" class="btn btn-sm btn-link text-primary-brand fw-bold text-decoration-none">View All 42 Drawings</a>
-                        </div>
                     </div>
                 </div>
 
-                <!-- Inspection Reports Sidebar -->
-                <div class="col-lg-4" id="reports">
-                    <div class="dash-section h-100">
-                        <div class="dash-section-title">
-                            <i class="bi bi-clipboard-check"></i> High Priority Audits
-                        </div>
-                        <div class="doc-row">
-                            <div class="doc-icon"><i class="bi bi-exclamation-triangle-fill text-danger"></i></div>
-                            <div class="doc-meta">
-                                <div class="doc-name">Corrosion Audit</div>
-                                <div class="doc-sub">Grand Bridge - Section A4</div>
+                <!-- Recent Activity -->
+                <div class="col-lg-4">
+                    <div class="dash-widget">
+                        <h5 class="fw-bold mb-4">Activity Intel</h5>
+                        <div class="activity-feed">
+                            <div class="activity-item">
+                                <div class="activity-dot"></div>
+                                <h6 class="mb-1 fw-bold">BIM Revision Uploaded</h6>
+                                <p class="small text-muted mb-0">Sarah Miller updated BR-741 technical drawings.</p>
+                                <small class="text-secondary-brand fw-bold">12 mins ago</small>
                             </div>
-                            <small class="text-danger fw-bold">Critical</small>
-                        </div>
-                        <div class="doc-row">
-                            <div class="doc-icon"><i class="bi bi-file-earmark-pdf"></i></div>
-                            <div class="doc-meta">
-                                <div class="doc-name">Load Test Report</div>
-                                <div class="doc-sub">Mountain Viaduct v2</div>
+                            <div class="activity-item">
+                                <div class="activity-dot bg-info"></div>
+                                <h6 class="mb-1 fw-bold">Compliance Passed</h6>
+                                <p class="small text-muted mb-0">ISO 9001 Structural Audit completed for Site A4.</p>
+                                <small class="text-secondary-brand fw-bold">2 hours ago</small>
                             </div>
-                            <small class="text-muted">Yesterday</small>
-                        </div>
-                        <div class="doc-row">
-                            <div class="doc-icon"><i class="bi bi-file-earmark-pdf text-secondary"></i></div>
-                            <div class="doc-meta">
-                                <div class="doc-name">Sensor Data Log</div>
-                                <div class="doc-sub">Project HUB-81</div>
+                            <div class="activity-item">
+                                <div class="activity-dot bg-danger"></div>
+                                <h6 class="mb-1 fw-bold">Security Alert</h6>
+                                <p class="small text-muted mb-0">Sensor miscalibration detected on Pier 42.</p>
+                                <small class="text-secondary-brand fw-bold">5 hours ago</small>
                             </div>
-                            <small class="text-muted">4h ago</small>
+                            <div class="activity-item pb-0">
+                                <div class="activity-dot bg-success"></div>
+                                <h6 class="mb-1 fw-bold">New Tender Added</h6>
+                                <p class="small text-muted mb-0">Coastal Metro Link expansion tender is live.</p>
+                                <small class="text-secondary-brand fw-bold">Yesterday</small>
+                            </div>
                         </div>
-                        <div class="mt-4 p-3 bg-light rounded text-center">
-                            <p class="small text-muted mb-2">Requirement: Periodic Inspection #42</p>
-                            <button class="btn btn-brand-secondary w-100 py-2">Schedule Audit</button>
-                        </div>
+                        <button class="btn btn-light w-100 mt-4 border py-2 small fw-bold">View Full Activity Log</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Messages / Compliance Row -->
+            <!-- Secondary Row -->
             <div class="row g-4 mt-2">
-                <div class="col-md-6" id="messages">
-                    <div class="dash-section">
-                        <div class="dash-section-title">
-                            <i class="bi bi-chat-text"></i> Communication Hub
+                <div class="col-md-6" id="compliance">
+                    <div class="dash-widget">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h5 class="fw-bold mb-0">Regulatory Sync</h5>
+                            <i class="bi bi-shield-lock-fill text-muted"></i>
                         </div>
-                        <div class="d-flex gap-3 mb-4 p-2 bg-light rounded align-items-center">
-                            <img src="https://loremflickr.com/150/150/person,face?random=27" class="rounded-circle" width="36" height="36" alt="User">
-                            <div class="flex-grow-1">
-                                <h6 class="mb-0 small fw-bold">Sarah Miller <span class="badge bg-secondary-brand ms-1">Contractor</span></h6>
-                                <p class="small text-muted mb-0">Attached the revised steel tensile reports for your approval.</p>
+                        <div class="list-group list-group-flush border-0">
+                            <div class="list-group-item bg-transparent d-flex justify-content-between align-items-center py-3">
+                                <div>
+                                    <h6 class="mb-0 fw-bold">AASHTO Structural License</h6>
+                                    <small class="text-muted">Expires in 142 days</small>
+                                </div>
+                                <span class="badge bg-success rounded-pill px-3 py-2">VALID</span>
                             </div>
-                            <small class="text-muted">10m</small>
-                        </div>
-                        <div class="d-flex gap-3 p-2 align-items-center">
-                            <img src="https://loremflickr.com/150/150/person,face?random=28" class="rounded-circle" width="36" height="36" alt="User">
-                            <div class="flex-grow-1">
-                                <h6 class="mb-0 small fw-bold">Marc Hughes <span class="badge bg-tertiary ms-1">Engineer</span></h6>
-                                <p class="small text-muted mb-0">The BIM model for BR-901 is now ready for export.</p>
+                            <div class="list-group-item bg-transparent d-flex justify-content-between align-items-center py-3">
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Federal Safety Clearance</h6>
+                                    <small class="text-muted">Verified by Dr. Chen</small>
+                                </div>
+                                <span class="badge bg-success rounded-pill px-3 py-2">VALID</span>
                             </div>
-                            <small class="text-muted">2h</small>
+                            <div class="list-group-item bg-transparent d-flex justify-content-between align-items-center py-3">
+                                <div>
+                                    <h6 class="mb-0 fw-bold">Emergency Response Hub</h6>
+                                    <small class="text-muted">Action Required: Update Protocol</small>
+                                </div>
+                                <span class="badge bg-warning text-dark rounded-pill px-3 py-2">PENDING</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6" id="compliance">
-                    <div class="dash-section h-100">
-                        <div class="dash-section-title">
-                            <i class="bi bi-shield-check"></i> Certification Status
+                <div class="col-md-6" id="messages">
+                    <div class="dash-widget">
+                        <h5 class="fw-bold mb-4">Quick Communication</h5>
+                        <div class="d-flex align-items-center gap-3 mb-4">
+                            <div class="bg-light p-3 rounded-3 flex-grow-1 border">
+                                <h6 class="mb-1 fw-bold small">Direct Message from Regional Director</h6>
+                                <p class="small text-muted mb-0">"Please review the seismic stress results for the Coastal span by EOD."</p>
+                            </div>
+                            <img src="https://loremflickr.com/150/150/professional,man?random=5" class="rounded-circle border" width="45" alt="Director">
                         </div>
-                        <div class="list-group list-group-flush border-top">
-                            <div class="list-group-item px-0 py-3 bg-transparent d-flex justify-content-between">
-                                <span class="small fw-bold">ISO 9001 Structural Quality</span>
-                                <span class="badge bg-success rounded-pill px-3">Active</span>
-                            </div>
-                            <div class="list-group-item px-0 py-3 bg-transparent d-flex justify-content-between">
-                                <span class="small fw-bold">Gov Infrastructure License</span>
-                                <span class="badge bg-success rounded-pill px-3">Active</span>
-                            </div>
-                            <div class="list-group-item px-0 py-3 bg-transparent d-flex justify-content-between">
-                                <span class="small fw-bold">Bridge Safety Hub Permit</span>
-                                <span class="badge bg-warning text-dark rounded-pill px-3">Renew Spec</span>
-                            </div>
+                        <div class="d-flex gap-2">
+                            <input type="text" class="form-control rounded-pill border py-2 px-3 small" placeholder="Quick reply to Director...">
+                            <button class="btn btn-brand-secondary rounded-pill px-4"><i class="bi bi-send-fill text-white"></i></button>
                         </div>
                     </div>
                 </div>
