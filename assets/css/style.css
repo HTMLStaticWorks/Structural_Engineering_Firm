@@ -273,7 +273,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 .brand-navbar .navbar-brand span { color: var(--secondary); }
 .brand-navbar .nav-link {
-  color: rgba(255,255,255,0.85) !important;
+  color: rgba(255,255,255,1) !important;
   font-weight: 500;
   font-size: 0.92rem;
   padding: 0.5rem 0.85rem !important;
@@ -486,7 +486,7 @@ h1,h2,h3,h4,h5,h6 {
   letter-spacing: 1px;
 }
 .brand-footer .footer-brand-name span { color: var(--secondary); }
-.brand-footer .footer-desc { font-size: 0.9rem; color: rgba(255,255,255,0.6); }
+.brand-footer .footer-desc { font-size: 0.9rem; color: rgba(255,255,255,0.85); }
 .social-icons a {
   display: inline-flex;
   align-items: center;
@@ -610,11 +610,13 @@ h1,h2,h3,h4,h5,h6 {
 [data-theme="dark"] .form-control:focus { background-color: var(--bg-card); color: var(--text-main); }
 [data-theme="dark"] select.form-select { background-color: var(--bg); color: var(--text-main); border-color: var(--border); }
 
-/* Ensure social icons in cards remain visible in dark mode */
-[data-theme="dark"] .brand-card .text-primary-brand {
+/* Ensure primary brand text elements remain visible in dark mode */
+[data-theme="dark"] .text-primary-brand,
+[data-theme="dark"] .text-primary {
     color: var(--secondary) !important;
 }
-[data-theme="dark"] .brand-card .text-primary-brand:hover {
+[data-theme="dark"] .text-primary-brand:hover,
+[data-theme="dark"] .text-primary:hover {
     color: white !important;
 }
 .social-login-btn {
@@ -674,10 +676,13 @@ h1,h2,h3,h4,h5,h6 {
 }
 .dash-sidebar .sidebar-brand-name {
   font-family: 'Barlow Condensed', sans-serif;
-  font-size: 1.35rem;
+  font-size: 1.5rem;
   font-weight: 800;
   color: #fff;
   letter-spacing: 1px;
+}
+.dash-sidebar .sidebar-brand-name:hover span {
+  text-decoration: none !important;
 }
 .dash-sidebar .sidebar-brand-name span { color: var(--secondary); }
 .dash-sidebar .sidebar-brand-sub {
@@ -698,7 +703,7 @@ h1,h2,h3,h4,h5,h6 {
   padding: 0.75rem 1.5rem 0.35rem;
 }
 .sidebar-nav .nav-link {
-  color: rgba(255,255,255,0.78);
+  color: rgba(255,255,255,0.92);
   padding: 0.7rem 1.5rem;
   border-radius: 0;
   font-size: 0.92rem;
@@ -718,6 +723,9 @@ h1,h2,h3,h4,h5,h6 {
   color: #fff;
   border-left-color: var(--secondary);
 }
+.dash-sidebar .sidebar-brand-name span { color: var(--secondary) !important; }
+.dash-sidebar .sidebar-brand-name:hover { text-decoration: none !important; }
+.dash-sidebar .sidebar-brand-name:hover span { text-decoration: none !important; }
 [dir="rtl"] .sidebar-nav .nav-link:hover,
 [dir="rtl"] .sidebar-nav .nav-link.active {
   border-left-color: transparent;
