@@ -680,6 +680,7 @@ h1,h2,h3,h4,h5,h6 {
   font-weight: 800;
   color: #fff;
   letter-spacing: 1px;
+  gap: 0.5rem;
 }
 .dash-sidebar .sidebar-brand-name:hover span {
   text-decoration: none !important;
@@ -954,7 +955,7 @@ h1,h2,h3,h4,h5,h6 {
   background: var(--secondary);
   color: #fff;
 }
-
+.partner-card {
   display: flex;
   align-items: center;
   justify-content: center;
