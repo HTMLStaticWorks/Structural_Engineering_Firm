@@ -471,6 +471,23 @@ h1,h2,h3,h4,h5,h6 {
   text-decoration: none;
 }
 .social-icons a:hover { background: var(--secondary); color: #fff; transform: translateY(-3px); }
+.social-icons.social-dark a {
+  background: var(--primary);
+  color: #fff;
+}
+.social-icons.social-dark a:hover {
+  background: var(--secondary);
+  color: #fff;
+}
+[data-theme="dark"] .social-icons.social-dark a {
+  background: var(--secondary);
+  color: var(--primary);
+}
+[data-theme="dark"] .social-icons.social-dark a:hover {
+  background: #fff;
+  color: var(--primary);
+}
+
 .footer-newsletter input {
   background: rgba(255,255,255,0.1);
   border: 1.5px solid rgba(255,255,255,0.2);
