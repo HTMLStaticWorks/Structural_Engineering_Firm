@@ -246,6 +246,12 @@ h1,h2,h3,h4,h5,h6 {
 .navbar-brand span { color: var(--secondary); }
 .navbar-brand:hover { opacity: 0.85; }
 
+.brand-logo-img {
+  height: 1.6rem;
+  width: auto;
+  vertical-align: middle;
+}
+
 /* ---- Navbar ---- */
 .brand-navbar {
   background: var(--bg-navbar) !important;
