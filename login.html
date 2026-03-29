@@ -15,13 +15,16 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div class="auth-wrapper position-relative">
+    <div class="auth-wrapper position-relative flex-column">
         <div class="hero-overlay hero-bg-main" style="opacity: 0.1;"></div>
         <div class="auth-card animate-fade-up position-relative z-1">
-            <div id="themeToggle" class="position-absolute top-0 end-0 m-3 cursor-pointer fs-5 text-muted"><i class="bi bi-moon-fill"></i></div>
+            <div class="position-absolute top-0 end-0 m-3 d-flex gap-3">
+                <div id="rtlToggle" class="rtlToggle cursor-pointer fs-5 text-muted" title="Toggle RTL"><i class="bi bi-translate"></i></div>
+                <div id="themeToggle" class="cursor-pointer fs-5 text-muted" title="Toggle Theme"><i class="bi bi-moon-fill"></i></div>
+            </div>
 
             <div class="text-center mb-4">
-                <a href="index.html" class="navbar-brand m-0 fs-3 justify-content-center mb-3">
+                <a href="index.html" class="navbar-brand d-flex align-items-center justify-content-center m-0 mb-3" dir="ltr">
                     <img src="assets/images/favicon.png" alt="ArcVantage" class="brand-logo-img me-2">
                     ARC<span>VANTAGE</span>
                 </a>

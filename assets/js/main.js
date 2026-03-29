@@ -38,12 +38,48 @@ document.addEventListener('DOMContentLoaded', () => {
     const savedDir = localStorage.getItem('dir') || 'ltr';
     document.documentElement.setAttribute('dir', savedDir);
 
+    function updateBootstrapRTL(dir) {
+        const bsLinks = document.querySelectorAll('link[href*="bootstrap.min.css"], link[href*="bootstrap.rtl.min.css"]');
+        bsLinks.forEach(link => {
+            if (dir === 'rtl') {
+                link.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css';
+            } else {
+                link.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css';
+            }
+        });
+    }
+
+    // Initialize Bootstrap CSS direction
+    updateBootstrapRTL(savedDir);
+
     rtlToggles.forEach(toggle => {
         toggle.addEventListener('click', () => {
             let currentDir = document.documentElement.getAttribute('dir');
             let newDir = currentDir === 'ltr' ? 'rtl' : 'ltr';
             document.documentElement.setAttribute('dir', newDir);
             localStorage.setItem('dir', newDir);
+            updateBootstrapRTL(newDir);
+        });
+    });
+
+    // ---- Dummy Action Handlers for Showcase ----
+    document.querySelectorAll('button').forEach(btn => {
+        if(btn.innerText.includes('New Project') || btn.innerText.includes('View Full Activity Log')) {
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                alert(`Action Triggered: ${btn.innerText.trim()}`);
+            });
+        }
+    });
+    document.querySelectorAll('.bi-bell').forEach(bell => {
+        bell.parentElement.addEventListener('click', () => {
+            alert('Notifications: No new alerts.');
+        });
+    });
+    document.querySelectorAll('.bi-three-dots-vertical').forEach(dot => {
+        dot.parentElement.addEventListener('click', (e) => {
+            e.preventDefault();
+            alert('Settings/Options menu clicked.');
         });
     });
 
