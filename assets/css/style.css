@@ -421,12 +421,18 @@ h1,h2,h3,h4,h5,h6 {
   background: var(--bg-card);
   box-shadow: var(--shadow);
   transition: var(--transition);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .project-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); }
 .project-card img { width: 100%; height: auto; aspect-ratio: 4 / 3; object-fit: cover; }
 .project-card .project-info {
   padding: 1.25rem;
   border-top: 3px solid var(--secondary);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
 }
 .project-card .project-category {
   font-size: 0.78rem;
@@ -445,10 +451,17 @@ h1,h2,h3,h4,h5,h6 {
   overflow: hidden;
   transition: var(--transition);
   height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 .service-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-hover); border-color: var(--secondary); }
 .service-card .svc-img { aspect-ratio: 16 / 9; width: 100%; height: auto; object-fit: cover; }
-.service-card .svc-body { padding: 1.5rem; }
+.service-card .svc-body { 
+  padding: 1.5rem; 
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
 .service-card .svc-icon {
   width: 54px; height: 54px;
   background: linear-gradient(135deg, var(--primary), var(--tertiary));
