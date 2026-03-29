@@ -72,7 +72,8 @@
         <main class="dash-main p-4 p-lg-5">
             <!-- Header -->
             <header class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-4 mb-5">
-                <div>
+                <div class="header-left">
+                    <p class="text-secondary-brand fw-bold mb-0 small text-uppercase" style="letter-spacing: 1px;">Welcome back, Admin</p>
                     <h2 class="fw-bold mb-1">Infrastructure Command</h2>
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb mb-0">
@@ -81,17 +82,28 @@
                         </ol>
                     </nav>
                 </div>
-                <div class="d-flex align-items-center gap-3">
-                    <div class="position-relative d-none d-lg-block">
+                <div class="header-right d-flex align-items-center gap-2 gap-md-3">
+                    <div class="position-relative d-none d-xl-block">
                         <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
-                        <input type="text" class="form-control px-5 py-2 rounded-pill search-bar-dash" placeholder="Query projects or reports...">
+                        <input type="text" class="form-control px-5 py-2 rounded-pill search-bar-dash" placeholder="Query projects...">
                     </div>
-                    <div class="bg-white p-2 rounded-circle shadow-sm position-relative cursor-pointer me-2">
+                    <div class="bg-white p-2 rounded-circle shadow-sm position-relative cursor-pointer">
                         <i class="bi bi-bell text-primary fs-5"></i>
                         <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
                     </div>
 
-                    <button class="btn btn-brand-primary rounded-pill px-4 d-none d-sm-block"><i class="bi bi-plus-lg me-2"></i> New Project</button>
+                    <div class="admin-profile-header d-flex align-items-center gap-2 ms-1 ps-3 border-start d-none d-sm-flex">
+                        <div class="text-end d-none d-lg-block">
+                            <p class="small fw-bold mb-0 lh-1">Dr. Robert Chen</p>
+                            <span class="badge bg-secondary bg-opacity-10 text-secondary-brand p-1 mt-1" style="font-size: 0.65rem;">PORTAL ADMIN</span>
+                        </div>
+                        <img src="assets/images/profile.png" class="rounded-circle border border-2 border-white shadow-sm" width="40" height="40" alt="Admin">
+                    </div>
+
+                    <button class="btn btn-brand-primary rounded-pill px-3 px-md-4 d-none d-md-flex align-items-center gap-2">
+                        <i class="bi bi-plus-lg"></i>
+                        <span class="d-none d-xxl-inline">New Project</span>
+                    </button>
                     <button class="btn btn-outline-secondary d-lg-none" id="sidebarToggle"><i class="bi bi-list"></i></button>
                 </div>
             </header>
