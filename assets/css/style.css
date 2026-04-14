@@ -802,6 +802,16 @@ h1,h2,h3,h4,h5,h6 {
   color: #fff;
   border-left-color: var(--secondary);
 }
+.nav-links .nav-link {
+  display: flex !important;
+  align-items: center;
+  gap: 0.85rem;
+}
+.nav-links .nav-link i {
+  font-size: 1.1rem;
+  width: 20px;
+  text-align: center;
+}
 .dash-sidebar .sidebar-brand-name span { color: var(--secondary) !important; }
 .dash-sidebar .sidebar-brand-name:hover { text-decoration: none !important; }
 .dash-sidebar .sidebar-brand-name:hover span { text-decoration: none !important; }
@@ -1177,20 +1187,23 @@ h1,h2,h3,h4,h5,h6 {
     position: relative;
   }
   
-  /* Keep hamburger toggle on the left without overlapping text */
-  #sidebarToggle {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 100;
+  /* Ensure header text has breathing room on mobile */
+  .header-left > div {
+    margin-top: 0;
+    padding: 0; 
+  }
+  .header-left > div p {
+    font-size: 1.15rem;
+    margin-bottom: 0;
   }
   
-  /* Ensure header text has breathing room on mobile */
-  .header-left h2 {
-    font-size: 1.5rem;
-    margin-top: 0.5rem;
-    padding: 0 40px; /* Prevent text from hitting the toggle */
+  /* Reset absolute position to prevent overlap */
+  #sidebarToggle {
+    position: relative !important;
+    left: auto !important;
+    top: auto !important;
+    transform: none !important;
+    margin-right: 0.5rem;
   }
   
   .dash-main .header-left nav ol {
@@ -1202,13 +1215,14 @@ h1,h2,h3,h4,h5,h6 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 3rem; /* Space for icon */
+    padding-top: 4.5rem; /* Increased space for icon */
   }
   .kpi-card .kpi-icon {
     left: 50%;
     transform: translateX(-50%);
     right: auto;
     top: 1rem;
+    opacity: 0.08 !important; /* Very faint to avoid text overlap issues */
   }
   .trend-indicator {
     justify-content: center;
