@@ -319,29 +319,6 @@ h1,h2,h3,h4,h5,h6 {
 
 .navbar-btn { min-width: 90px; justify-content: center; }
 
-/* ---- Theme Toggle ---- */
-#themeToggle, .themeToggle {
-  background: #fff;
-  border: 1.5px solid #fff;
-  color: var(--primary);
-  border-radius: 50px;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  transition: var(--transition);
-  font-size: 1.1rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-}
-#themeToggle:hover, .themeToggle:hover {
-  background: var(--secondary);
-  border-color: var(--secondary);
-  color: #fff;
-  transform: scale(1.1);
-}
-
 /* ---- Hero Sections ---- */
 .hero-section {
   min-height: 90vh;
@@ -1309,8 +1286,8 @@ h1,h2,h3,h4,h5,h6 {
     gap: 0.75rem !important;
   }
   .auth-wrapper .rtlToggle, 
-  .auth-wrapper #themeToggle {
-    font-size: 1.2rem !important; /* Slightly smaller icons */
+  .themeToggle {
+    font-size: 1.2rem !important; 
   }
   .auth-card .navbar-brand {
     font-size: 1.4rem; /* Prevent brand name from hitting toggles */
@@ -1363,30 +1340,39 @@ h1,h2,h3,h4,h5,h6 {
   font-size: 1.5rem;
 }
 
-/* ---- RTL Toggle Button ---- */
-/* ---- RTL Toggle Button ---- */
-#rtlToggle, .rtlToggle, .themeToggle {
-  background: #ffffff !important;
-  border: 1.5px solid #ffffff !important;
-  color: var(--primary) !important;
-  border-radius: 50px;
+
+/* ---- Unified Theme & RTL Toggles ---- */
+.themeToggle, .rtlToggle {
   width: 40px;
   height: 40px;
   display: flex !important;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: var(--transition);
+  border-radius: 50%;
+  transition: all 0.3s ease;
   font-size: 1.1rem;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-  margin-left: 0.75rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #ffffff;
 }
 
-#rtlToggle:hover, .rtlToggle:hover, .themeToggle:hover {
+[data-theme="dark"] .themeToggle, 
+[data-theme="dark"] .rtlToggle {
+  background: rgba(255,255,255,0.05);
+  border-color: rgba(255,255,255,0.1);
+}
+
+.themeToggle:hover, .rtlToggle:hover {
   background: var(--secondary) !important;
   border-color: var(--secondary) !important;
-  color: #fff !important;
-  transform: scale(1.1);
+  color: #ffffff !important;
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Shadow for toggles when they are on white backgrounds (Dashboard/Auth) */
+.toggle-shadow {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
 }
 
 /* ---- Our Credentials section contrast fix ---- */
@@ -1521,6 +1507,13 @@ h1,h2,h3,h4,h5,h6 {
   transition: all 0.25s ease;
   flex-shrink: 0;
 }
+.sidebar-icon-btn:hover {
+  background: var(--secondary);
+  border-color: var(--secondary);
+  color: #fff;
+  transform: scale(1.1);
+}
+
 .sidebar-icon-btn:hover {
   background: var(--secondary);
   border-color: var(--secondary);

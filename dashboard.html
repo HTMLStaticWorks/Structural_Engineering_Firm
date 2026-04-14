@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard - ArcVantage Professional Portal</title>
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/images/favicon.png">
-    
+
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
@@ -14,13 +15,15 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
+
 <body class="bg-light">
 
     <div class="dashboard-wrapper">
         <!-- Sidebar -->
         <aside class="dash-sidebar d-flex flex-column overflow-y-auto">
             <div class="sidebar-brand text-center py-4">
-                <a href="index.html" class="sidebar-brand-name text-decoration-none d-flex align-items-center justify-content-center">
+                <a href="index.html"
+                    class="sidebar-brand-name text-decoration-none d-flex align-items-center justify-content-center">
                     <img src="assets/images/favicon.png" alt="ArcVantage" class="brand-logo-img me-2">
                     ARC<span>VANTAGE</span>
                 </a>
@@ -29,14 +32,21 @@
             <nav class="flex-grow-1 p-3 d-flex flex-column">
                 <div class="nav-links">
                     <div class="nav-section-label mb-2 opacity-50 px-3 small fw-bold">MASTER HUB</div>
-                    <a href="#analytics" class="nav-link active py-3 px-3 rounded-3 mb-1"><i class="bi bi-speedometer2 me-2"></i> Dashboard Overview</a>
-                    <a href="#projects" class="nav-link py-3 px-3 rounded-3 mb-1"><i class="bi bi-stack me-2"></i> Project Portfolio</a>
-                    
+                    <a href="#analytics" class="nav-link active py-3 px-3 rounded-3 mb-1"><i
+                            class="bi bi-speedometer2 me-2"></i> Dashboard Overview</a>
+                    <a href="#projects" class="nav-link py-3 px-3 rounded-3 mb-1"><i class="bi bi-stack me-2"></i>
+                        Project Portfolio</a>
+
                     <div class="nav-section-label mt-4 mb-2 opacity-50 px-3 small fw-bold">ENGINEERING CORE</div>
-                    <a href="#compliance" class="nav-link py-3 px-3 rounded-3 mb-1"><i class="bi bi-shield-check me-2"></i> Compliance Vault</a>
+                    <a href="#compliance" class="nav-link py-3 px-3 rounded-3 mb-1"><i
+                            class="bi bi-shield-check me-2"></i> Compliance Vault</a>
                 </div>
 
-                <div class="mt-auto pt-4 border-top border-white border-opacity-10 px-2">
+                <div class="mt-auto pt-4 border-top border-white border-opacity-10 px-2 text-center">
+                    <div class="d-flex gap-2 justify-content-center mb-4">
+                        <div id="themeToggle" class="themeToggle toggle-shadow" title="Toggle Theme"><i class="bi bi-moon-fill fs-6"></i></div>
+                        <div id="rtlToggle" class="rtlToggle toggle-shadow" title="Toggle RTL"><i class="bi bi-arrow-left-right fs-6"></i></div>
+                    </div>
                     <a href="index.html" class="nav-link text-danger py-3 px-3 rounded-3 mb-2" title="Logout System">
                         <i class="bi bi-box-arrow-left me-2"></i> Logout System
                     </a>
@@ -49,50 +59,59 @@
         <!-- Main Content -->
         <main class="dash-main p-4 p-lg-5">
             <!-- Header -->
-            <header class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-4 mb-5 position-relative">
+            <header
+                class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-4 mb-5 position-relative">
                 <div class="header-left d-flex align-items-center gap-3">
-                    <button class="btn btn-outline-secondary d-lg-none" id="sidebarToggle"><i class="bi bi-list"></i></button>
+                    <button class="btn btn-outline-secondary d-lg-none" id="sidebarToggle"><i
+                            class="bi bi-list"></i></button>
                     <div>
-                        <p class="text-secondary-brand fw-bold mb-0 small text-uppercase" style="letter-spacing: 1px;">Welcome back, Admin</p>
-                        <h2 class="fw-bold mb-1">Infrastructure Command</h2>
-                        <nav aria-label="breadcrumb">
-                            <ol class="breadcrumb mb-0">
-                                <li class="breadcrumb-item"><a href="#" class="text-decoration-none text-muted">Portal</a></li>
-                                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                            </ol>
-                        </nav>
+                        <p class="text-secondary-brand fw-bold mb-0 small text-uppercase" style="letter-spacing: 1px;">
+                            Welcome back, Admin</p>
+
                     </div>
                 </div>
-                    <div class="header-right d-flex align-items-center gap-2 gap-md-3">
-                        <div class="position-relative d-none d-xl-block">
-                            <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
-                            <input type="text" class="form-control px-5 py-2 rounded-pill search-bar-dash" placeholder="Query projects...">
-                        </div>
-
-                        <!-- Theme & RTL Toggles -->
-                        <div class="d-flex align-items-center gap-2 border-end pe-3 me-1 d-none d-md-flex">
-                            <div id="themeToggle" class="themeToggle cursor-pointer bg-white p-2 rounded-circle shadow-sm" title="Toggle Theme"><i class="bi bi-moon-fill text-primary fs-5"></i></div>
-                            <div id="rtlToggle" class="rtlToggle cursor-pointer bg-white p-2 rounded-circle shadow-sm" title="Toggle RTL"><i class="bi bi-translate text-primary fs-5"></i></div>
-                        </div>
-
-                        <div class="bg-white p-2 rounded-circle shadow-sm position-relative cursor-pointer">
-                            <i class="bi bi-bell text-primary fs-5"></i>
-                            <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
-                        </div>
-
-                        <div class="admin-profile-header d-flex align-items-center gap-2 ms-1 ps-3 border-start d-none d-sm-flex">
-                            <div class="text-end d-none d-lg-block">
-                                <p class="small fw-bold mb-0 lh-1">Dr. Robert Chen</p>
-                                <span class="badge bg-secondary bg-opacity-10 text-secondary-brand p-1 mt-1" style="font-size: 0.65rem;">PORTAL ADMIN</span>
-                            </div>
-                            <img src="assets/images/profile.png" class="rounded-circle border border-2 border-white shadow-sm" width="40" height="40" alt="Admin">
-                        </div>
-
-                        <button class="btn btn-brand-primary rounded-pill px-3 px-md-4 d-none d-md-flex align-items-center gap-2">
-                            <i class="bi bi-plus-lg"></i>
-                            <span class="d-none d-xxl-inline">New Project</span>
-                        </button>
+                <div class="header-right d-flex align-items-center gap-2 gap-md-3">
+                    <div class="position-relative d-none d-xl-block">
+                        <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+                        <input type="text" class="form-control px-5 py-2 rounded-pill search-bar-dash"
+                            placeholder="Query projects...">
                     </div>
+
+                    <!-- Theme & RTL Toggles -->
+                    <div class="d-flex align-items-center gap-2 border-end pe-3 me-1">
+                        <div id="themeToggle" class="themeToggle toggle-shadow" title="Toggle Theme">
+                            <i class="bi bi-moon-fill fs-5"></i>
+                        </div>
+                        <div id="rtlToggle" class="rtlToggle toggle-shadow" title="Toggle RTL">
+                            <i class="bi bi-arrow-left-right fs-5"></i>
+                        </div>
+                    </div>
+
+
+                    <div class="bg-white p-2 rounded-circle shadow-sm position-relative cursor-pointer">
+                        <i class="bi bi-bell text-primary fs-5"></i>
+                        <span
+                            class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+                    </div>
+
+                    <div
+                        class="admin-profile-header d-flex align-items-center gap-2 ms-1 ps-3 border-start d-none d-sm-flex">
+                        <div class="text-end d-none d-lg-block">
+                            <p class="small fw-bold mb-0 lh-1">Dr. Robert Chen</p>
+                            <span class="badge bg-secondary bg-opacity-10 text-secondary-brand p-1 mt-1"
+                                style="font-size: 0.65rem;">PORTAL ADMIN</span>
+                        </div>
+                        <img src="assets/images/profile.png"
+                            class="rounded-circle border border-2 border-white shadow-sm" width="40" height="40"
+                            alt="Admin">
+                    </div>
+
+                    <button
+                        class="btn btn-brand-primary rounded-pill px-3 px-md-4 d-none d-md-flex align-items-center gap-2">
+                        <i class="bi bi-plus-lg"></i>
+                        <span class="d-none d-xxl-inline">New Project</span>
+                    </button>
+                </div>
             </header>
 
             <!-- Metrics Overview -->
@@ -103,7 +122,8 @@
                         <h6 class="text-muted fw-bold small text-uppercase mb-3">Managed Assets</h6>
                         <h2 class="fw-bold mb-1">128</h2>
                         <div class="trend-indicator trend-up">
-                            <i class="bi bi-arrow-up-right me-1"></i> +8.4% <span class="text-muted fw-normal ms-1">vs last quarter</span>
+                            <i class="bi bi-arrow-up-right me-1"></i> +8.4% <span class="text-muted fw-normal ms-1">vs
+                                last quarter</span>
                         </div>
                     </div>
                 </div>
@@ -147,7 +167,8 @@
                         <div class="d-flex justify-content-between align-items-center mb-4">
                             <h5 class="fw-bold mb-0">Active Project Matrix</h5>
                             <div class="dropdown">
-                                <button class="btn btn-sm btn-light border dropdown-toggle" type="button" data-bs-toggle="dropdown">Last 30 Days</button>
+                                <button class="btn btn-sm btn-light border dropdown-toggle" type="button"
+                                    data-bs-toggle="dropdown">Last 30 Days</button>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="#">All Time</a></li>
                                     <li><a class="dropdown-item" href="#">This Quarter</a></li>
@@ -169,7 +190,8 @@
                                     <tr>
                                         <td>
                                             <div class="d-flex align-items-center gap-3">
-                                                <div class="bg-primary bg-opacity-10 p-2 rounded-3 text-primary"><i class="bi bi-bridge fs-4"></i></div>
+                                                <div class="bg-primary bg-opacity-10 p-2 rounded-3 text-primary"><i
+                                                        class="bi bi-bridge fs-4"></i></div>
                                                 <div>
                                                     <h6 class="mb-0 fw-bold">Grand Valley Viaduct</h6>
                                                     <small class="text-muted small">ID: GV-BR-2024</small>
@@ -186,12 +208,16 @@
                                             </div>
                                         </td>
                                         <td><span class="status-chip status-active">Operational</span></td>
-                                        <td><button class="btn btn-sm btn-outline-secondary border-0"><i class="bi bi-three-dots-vertical"></i></button></td>
+                                        <td><button class="btn btn-sm btn-outline-secondary border-0"><i
+                                                    class="bi bi-three-dots-vertical"></i></button></td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <div class="d-flex align-items-center gap-3">
-                                                <div class="bg-secondary bg-opacity-10 p-2 rounded-3 text-secondary-brand"><i class="bi bi-buildings fs-4"></i></div>
+                                                <div
+                                                    class="bg-secondary bg-opacity-10 p-2 rounded-3 text-secondary-brand">
+                                                    <i class="bi bi-buildings fs-4"></i>
+                                                </div>
                                                 <div>
                                                     <h6 class="mb-0 fw-bold">Seismic Retrofit B4</h6>
                                                     <small class="text-muted small">ID: SR-BR-8101</small>
@@ -208,12 +234,14 @@
                                             </div>
                                         </td>
                                         <td><span class="status-chip status-pending">In Review</span></td>
-                                        <td><button class="btn btn-sm btn-outline-secondary border-0"><i class="bi bi-three-dots-vertical"></i></button></td>
+                                        <td><button class="btn btn-sm btn-outline-secondary border-0"><i
+                                                    class="bi bi-three-dots-vertical"></i></button></td>
                                     </tr>
                                     <tr>
                                         <td>
                                             <div class="d-flex align-items-center gap-3">
-                                                <div class="bg-info bg-opacity-10 p-2 rounded-3 text-info"><i class="bi bi-water fs-4"></i></div>
+                                                <div class="bg-info bg-opacity-10 p-2 rounded-3 text-info"><i
+                                                        class="bi bi-water fs-4"></i></div>
                                                 <div>
                                                     <h6 class="mb-0 fw-bold">Marine Foundation Audit</h6>
                                                     <small class="text-muted small">ID: MF-AU-0922</small>
@@ -230,7 +258,8 @@
                                             </div>
                                         </td>
                                         <td><span class="status-chip status-danger">Critical Fix</span></td>
-                                        <td><button class="btn btn-sm btn-outline-secondary border-0"><i class="bi bi-three-dots-vertical"></i></button></td>
+                                        <td><button class="btn btn-sm btn-outline-secondary border-0"><i
+                                                    class="bi bi-three-dots-vertical"></i></button></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -268,7 +297,8 @@
                                 <small class="text-secondary-brand fw-bold">Yesterday</small>
                             </div>
                         </div>
-                        <button class="btn btn-light w-100 mt-4 border py-2 small fw-bold">View Full Activity Log</button>
+                        <button class="btn btn-light w-100 mt-4 border py-2 small fw-bold">View Full Activity
+                            Log</button>
                     </div>
                 </div>
             </div>
@@ -282,21 +312,24 @@
                             <i class="bi bi-shield-lock-fill text-muted"></i>
                         </div>
                         <div class="list-group list-group-flush border-0">
-                            <div class="list-group-item bg-transparent d-flex justify-content-between align-items-center py-3">
+                            <div
+                                class="list-group-item bg-transparent d-flex justify-content-between align-items-center py-3">
                                 <div>
                                     <h6 class="mb-0 fw-bold">AASHTO Structural License</h6>
                                     <small class="text-muted">Expires in 142 days</small>
                                 </div>
                                 <span class="badge bg-success rounded-pill px-3 py-2">VALID</span>
                             </div>
-                            <div class="list-group-item bg-transparent d-flex justify-content-between align-items-center py-3">
+                            <div
+                                class="list-group-item bg-transparent d-flex justify-content-between align-items-center py-3">
                                 <div>
                                     <h6 class="mb-0 fw-bold">Federal Safety Clearance</h6>
                                     <small class="text-muted">Verified by Dr. Chen</small>
                                 </div>
                                 <span class="badge bg-success rounded-pill px-3 py-2">VALID</span>
                             </div>
-                            <div class="list-group-item bg-transparent d-flex justify-content-between align-items-center py-3">
+                            <div
+                                class="list-group-item bg-transparent d-flex justify-content-between align-items-center py-3">
                                 <div>
                                     <h6 class="mb-0 fw-bold">Emergency Response Hub</h6>
                                     <small class="text-muted">Action Required: Update Protocol</small>
@@ -312,13 +345,17 @@
                         <div class="d-flex align-items-center gap-3 mb-4">
                             <div class="bg-light p-3 rounded-3 flex-grow-1 border">
                                 <h6 class="mb-1 fw-bold small">Direct Message from Regional Director</h6>
-                                <p class="small text-muted mb-0">"Please review the seismic stress results for the Coastal span by EOD."</p>
+                                <p class="small text-muted mb-0">"Please review the seismic stress results for the
+                                    Coastal span by EOD."</p>
                             </div>
-                            <img src="assets/images/profile.png" class="rounded-circle border" width="45" alt="Director">
+                            <img src="assets/images/profile.png" class="rounded-circle border" width="45"
+                                alt="Director">
                         </div>
                         <div class="d-flex gap-2">
-                            <input type="text" class="form-control rounded-pill border py-2 px-3 small" placeholder="Quick reply to Director...">
-                            <button class="btn btn-brand-secondary rounded-pill px-4"><i class="bi bi-send-fill text-white"></i></button>
+                            <input type="text" class="form-control rounded-pill border py-2 px-3 small"
+                                placeholder="Quick reply to Director...">
+                            <button class="btn btn-brand-secondary rounded-pill px-4"><i
+                                    class="bi bi-send-fill text-white"></i></button>
                         </div>
                     </div>
                 </div>
@@ -330,4 +367,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/main.js"></script>
 </body>
+
 </html>

@@ -41,8 +41,8 @@
                             <a href="login.html" class="btn btn-brand-secondary btn-sm px-4 text-white">Login</a>
                         </li>
                     </ul>
-                    <div id="rtlToggle" class="ms-lg-3" title="Toggle RTL"><i class="bi bi-translate"></i></div>
-                    <div id="themeToggle" class="ms-lg-3"><i class="bi bi-moon-fill"></i></div>
+                    <div id="themeToggle" class="themeToggle d-none d-lg-flex ms-lg-3" title="Toggle Theme"><i class="bi bi-moon-fill fs-5"></i></div>
+                    <div id="rtlToggle" class="rtlToggle d-none d-lg-flex ms-lg-3" title="Toggle RTL"><i class="bi bi-arrow-left-right fs-5"></i></div>
                 </div>
             </div>
         </div>
@@ -64,6 +64,10 @@
                 <li class="nav-item"><a class="nav-link" href="dashboard.html">Dashboard</a></li>
                 <li class="nav-item mt-3"><a href="login.html" class="btn btn-brand-secondary w-100 text-white">Login</a></li>
             </ul>
+            <div class="d-flex gap-3 justify-content-center pt-4 mt-3 border-top border-white border-opacity-10">
+                <div class="themeToggle toggle-shadow" title="Toggle Theme"><i class="bi bi-moon-fill fs-5"></i></div>
+                <div class="rtlToggle toggle-shadow" title="Toggle RTL"><i class="bi bi-arrow-left-right fs-5"></i></div>
+            </div>
         </div>
     </div>
 

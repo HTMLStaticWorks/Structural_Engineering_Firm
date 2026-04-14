@@ -26,9 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateThemeIcon(theme) {
         document.querySelectorAll('.themeToggle i, #themeToggle i').forEach(icon => {
             if (theme === 'dark') {
-                icon.classList.replace('bi-moon-fill', 'bi-sun-fill');
+                icon.classList.remove('bi-moon-fill');
+                icon.classList.add('bi-sun-fill');
+                icon.style.color = '#ffc107'; // Ensure sun is visible gold
             } else {
-                icon.classList.replace('bi-sun-fill', 'bi-moon-fill');
+                icon.classList.remove('bi-sun-fill');
+                icon.classList.add('bi-moon-fill');
+                icon.style.color = ''; // Reset to CSS default
             }
         });
     }
@@ -59,8 +63,24 @@ document.addEventListener('DOMContentLoaded', () => {
             document.documentElement.setAttribute('dir', newDir);
             localStorage.setItem('dir', newDir);
             updateBootstrapRTL(newDir);
+            updateRtlIcon(newDir);
         });
     });
+
+    function updateRtlIcon(dir) {
+        document.querySelectorAll('.rtlToggle i, #rtlToggle i').forEach(icon => {
+            if (dir === 'rtl') {
+                icon.classList.remove('bi-arrow-left-right');
+                icon.classList.add('bi-arrow-right-left');
+            } else {
+                icon.classList.remove('bi-arrow-right-left');
+                icon.classList.add('bi-arrow-left-right');
+            }
+        });
+    }
+
+    // Initialize RTL icon
+    updateRtlIcon(savedDir);
 
     // ---- Dummy Action Handlers for Showcase ----
     document.querySelectorAll('button').forEach(btn => {
