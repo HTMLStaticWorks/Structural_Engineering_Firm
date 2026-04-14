@@ -26,39 +26,20 @@
                 </a>
             </div>
 
-            <nav class="flex-grow-1 p-3">
-                <div class="nav-section-label mb-2 opacity-50 px-3 small fw-bold">MASTER HUB</div>
-                <a href="#analytics" class="nav-link active py-3 px-3 rounded-3 mb-1"><i class="bi bi-speedometer2 me-2"></i> Dashboard Overview</a>
-                <a href="#projects" class="nav-link py-3 px-3 rounded-3 mb-1"><i class="bi bi-stack me-2"></i> Project Portfolio</a>
-                
-                <div class="nav-section-label mt-4 mb-2 opacity-50 px-3 small fw-bold">ENGINEERING CORE</div>
-                <a href="#compliance" class="nav-link py-3 px-3 rounded-3 mb-1"><i class="bi bi-shield-check me-2"></i> Compliance Vault</a>
-                
+            <nav class="flex-grow-1 p-3 d-flex flex-column">
+                <div class="nav-links">
+                    <div class="nav-section-label mb-2 opacity-50 px-3 small fw-bold">MASTER HUB</div>
+                    <a href="#analytics" class="nav-link active py-3 px-3 rounded-3 mb-1"><i class="bi bi-speedometer2 me-2"></i> Dashboard Overview</a>
+                    <a href="#projects" class="nav-link py-3 px-3 rounded-3 mb-1"><i class="bi bi-stack me-2"></i> Project Portfolio</a>
+                    
+                    <div class="nav-section-label mt-4 mb-2 opacity-50 px-3 small fw-bold">ENGINEERING CORE</div>
+                    <a href="#compliance" class="nav-link py-3 px-3 rounded-3 mb-1"><i class="bi bi-shield-check me-2"></i> Compliance Vault</a>
+                </div>
 
-
-                <!-- Profile Card inside nav -->
-                <div class="sidebar-profile-card mt-4 mx-1 p-3 rounded-3">
-                    <div class="d-flex align-items-center gap-3 mb-3">
-                        <img src="assets/images/profile.png" class="rounded-circle border border-2 border-secondary" width="45" alt="User">
-                        <div class="overflow-hidden">
-                            <h6 class="mb-0 text-white text-truncate">Dr. Robert Chen</h6>
-                            <small class="text-secondary-brand small fw-bold">Portal Admin</small>
-                        </div>
-                    </div>
-                    <div class="d-flex align-items-center gap-2 mb-2">
-                        <a href="index.html" id="logoutBtn" class="sidebar-action-btn text-danger flex-fill" title="Logout">
-                            <i class="bi bi-box-arrow-left"></i>
-                            <span class="small">Logout</span>
-                        </a>
-                    </div>
-                    <div class="d-flex align-items-center gap-2">
-                        <button id="themeToggle" class="sidebar-icon-btn" title="Toggle Theme">
-                            <i class="bi bi-sun-fill"></i>
-                        </button>
-                        <button id="rtlToggle" class="sidebar-icon-btn" title="Toggle RTL/LTR">
-                            <i class="bi bi-translate"></i>
-                        </button>
-                    </div>
+                <div class="mt-auto pt-4 border-top border-white border-opacity-10 px-2">
+                    <a href="index.html" class="nav-link text-danger py-3 px-3 rounded-3 mb-2" title="Logout System">
+                        <i class="bi bi-box-arrow-left me-2"></i> Logout System
+                    </a>
                 </div>
             </nav>
 
@@ -68,41 +49,50 @@
         <!-- Main Content -->
         <main class="dash-main p-4 p-lg-5">
             <!-- Header -->
-            <header class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-4 mb-5">
-                <div class="header-left">
-                    <p class="text-secondary-brand fw-bold mb-0 small text-uppercase" style="letter-spacing: 1px;">Welcome back, Admin</p>
-                    <h2 class="fw-bold mb-1">Infrastructure Command</h2>
-                    <nav aria-label="breadcrumb">
-                        <ol class="breadcrumb mb-0">
-                            <li class="breadcrumb-item"><a href="#" class="text-decoration-none text-muted">Portal</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-                        </ol>
-                    </nav>
-                </div>
-                <div class="header-right d-flex align-items-center gap-2 gap-md-3">
-                    <div class="position-relative d-none d-xl-block">
-                        <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
-                        <input type="text" class="form-control px-5 py-2 rounded-pill search-bar-dash" placeholder="Query projects...">
-                    </div>
-                    <div class="bg-white p-2 rounded-circle shadow-sm position-relative cursor-pointer">
-                        <i class="bi bi-bell text-primary fs-5"></i>
-                        <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
-                    </div>
-
-                    <div class="admin-profile-header d-flex align-items-center gap-2 ms-1 ps-3 border-start d-none d-sm-flex">
-                        <div class="text-end d-none d-lg-block">
-                            <p class="small fw-bold mb-0 lh-1">Dr. Robert Chen</p>
-                            <span class="badge bg-secondary bg-opacity-10 text-secondary-brand p-1 mt-1" style="font-size: 0.65rem;">PORTAL ADMIN</span>
-                        </div>
-                        <img src="assets/images/profile.png" class="rounded-circle border border-2 border-white shadow-sm" width="40" height="40" alt="Admin">
-                    </div>
-
-                    <button class="btn btn-brand-primary rounded-pill px-3 px-md-4 d-none d-md-flex align-items-center gap-2">
-                        <i class="bi bi-plus-lg"></i>
-                        <span class="d-none d-xxl-inline">New Project</span>
-                    </button>
+            <header class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-4 mb-5 position-relative">
+                <div class="header-left d-flex align-items-center gap-3">
                     <button class="btn btn-outline-secondary d-lg-none" id="sidebarToggle"><i class="bi bi-list"></i></button>
+                    <div>
+                        <p class="text-secondary-brand fw-bold mb-0 small text-uppercase" style="letter-spacing: 1px;">Welcome back, Admin</p>
+                        <h2 class="fw-bold mb-1">Infrastructure Command</h2>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb mb-0">
+                                <li class="breadcrumb-item"><a href="#" class="text-decoration-none text-muted">Portal</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
+                            </ol>
+                        </nav>
+                    </div>
                 </div>
+                    <div class="header-right d-flex align-items-center gap-2 gap-md-3">
+                        <div class="position-relative d-none d-xl-block">
+                            <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
+                            <input type="text" class="form-control px-5 py-2 rounded-pill search-bar-dash" placeholder="Query projects...">
+                        </div>
+
+                        <!-- Theme & RTL Toggles -->
+                        <div class="d-flex align-items-center gap-2 border-end pe-3 me-1 d-none d-md-flex">
+                            <div id="themeToggle" class="themeToggle cursor-pointer bg-white p-2 rounded-circle shadow-sm" title="Toggle Theme"><i class="bi bi-moon-fill text-primary fs-5"></i></div>
+                            <div id="rtlToggle" class="rtlToggle cursor-pointer bg-white p-2 rounded-circle shadow-sm" title="Toggle RTL"><i class="bi bi-translate text-primary fs-5"></i></div>
+                        </div>
+
+                        <div class="bg-white p-2 rounded-circle shadow-sm position-relative cursor-pointer">
+                            <i class="bi bi-bell text-primary fs-5"></i>
+                            <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"></span>
+                        </div>
+
+                        <div class="admin-profile-header d-flex align-items-center gap-2 ms-1 ps-3 border-start d-none d-sm-flex">
+                            <div class="text-end d-none d-lg-block">
+                                <p class="small fw-bold mb-0 lh-1">Dr. Robert Chen</p>
+                                <span class="badge bg-secondary bg-opacity-10 text-secondary-brand p-1 mt-1" style="font-size: 0.65rem;">PORTAL ADMIN</span>
+                            </div>
+                            <img src="assets/images/profile.png" class="rounded-circle border border-2 border-white shadow-sm" width="40" height="40" alt="Admin">
+                        </div>
+
+                        <button class="btn btn-brand-primary rounded-pill px-3 px-md-4 d-none d-md-flex align-items-center gap-2">
+                            <i class="bi bi-plus-lg"></i>
+                            <span class="d-none d-xxl-inline">New Project</span>
+                        </button>
+                    </div>
             </header>
 
             <!-- Metrics Overview -->

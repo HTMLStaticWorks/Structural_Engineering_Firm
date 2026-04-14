@@ -17,11 +17,14 @@
 <body>
     <div class="auth-wrapper position-relative flex-column">
         <div class="hero-overlay hero-bg-main" style="opacity: 0.1;"></div>
+        
+        <!-- Toggles moved outside the container -->
+        <div class="position-absolute top-0 end-0 m-4 d-flex gap-3 z-3">
+            <div id="rtlToggle" class="rtlToggle cursor-pointer hover-opacity" title="Toggle RTL"><i class="bi bi-translate"></i></div>
+            <div id="themeToggle" class="themeToggle cursor-pointer hover-opacity" title="Toggle Theme"><i class="bi bi-moon-fill"></i></div>
+        </div>
+
         <div class="auth-card animate-fade-up position-relative z-1">
-            <div class="position-absolute top-0 end-0 m-3 d-flex gap-3">
-                <div id="rtlToggle" class="rtlToggle cursor-pointer fs-5 text-muted" title="Toggle RTL"><i class="bi bi-translate"></i></div>
-                <div id="themeToggle" class="cursor-pointer fs-5 text-muted" title="Toggle Theme"><i class="bi bi-moon-fill"></i></div>
-            </div>
 
             <div class="text-center mb-4">
                 <a href="index.html" class="navbar-brand d-flex align-items-center justify-content-center m-0 mb-3" dir="ltr">
@@ -46,19 +49,22 @@
                         <input class="form-check-input" type="checkbox" id="remember">
                         <label class="form-check-label small" for="remember">Remember me</label>
                     </div>
-                    <a href="#" class="small text-primary-brand fw-bold text-decoration-none">Forgot Password?</a>
+                    <a href="#" class="small text-white fw-bold text-decoration-none">Forgot Password?</a>
                 </div>
                 <button type="submit" class="btn btn-brand-primary w-100 py-2">Sign In</button>
             </form>
 
             <div class="auth-divider text-white">Or continue with</div>
 
-            <div class="d-flex gap-3">
-                <button class="social-login-btn">
-                    <i class="bi bi-google text-danger"></i> Google
+            <div class="d-flex justify-content-center gap-3">
+                <button class="social-login-btn" title="Google Login">
+                    <i class="bi bi-google text-danger"></i>
                 </button>
-                <button class="social-login-btn">
-                    <i class="bi bi-linkedin text-primary"></i> LinkedIn
+                <button class="social-login-btn" title="Apple Login">
+                    <i class="bi bi-apple text-dark"></i>
+                </button>
+                <button class="social-login-btn" title="LinkedIn Login">
+                    <i class="bi bi-linkedin text-primary"></i>
                 </button>
             </div>
 

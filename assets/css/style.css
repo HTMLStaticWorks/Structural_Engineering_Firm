@@ -55,6 +55,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
   line-height: 1.7;
   font-size: 16px;
+  overflow-x: hidden; /* Prevent horizontal scrolling globally */
 }
 img {
   max-width: 100%;
@@ -179,6 +180,13 @@ h1,h2,h3,h4,h5,h6 {
   transform: translateY(-2px) scale(1.02);
   box-shadow: 0 6px 20px rgba(26,47,90,0.15);
   filter: brightness(1.05);
+}
+
+.hover-opacity {
+  transition: opacity 0.3s ease;
+}
+.hover-opacity:hover {
+  opacity: 0.7;
 }
 
 /* ---- Cards ---- */
@@ -690,20 +698,20 @@ h1,h2,h3,h4,h5,h6 {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.6rem;
-  width: 100%;
-  padding: 0.6rem 1rem;
-  border-radius: var(--radius);
-  border: 1.5px solid var(--border);
-  background: var(--bg-card);
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: #ffffff;
   color: var(--text-main);
-  font-weight: 600;
-  font-size: 0.9rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.6rem;
-  width: 100%;
+  font-size: 1.35rem;
+  transition: var(--transition);
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+[data-theme="dark"] .social-login-btn {
+  background: var(--bg-card);
+  border-color: var(--border);
 }
 .social-login-btn:hover { border-color: var(--primary); color: var(--primary); background: rgba(26,47,90,0.05); }
 .auth-divider {
@@ -836,7 +844,8 @@ h1,h2,h3,h4,h5,h6 {
 @media (max-width: 991.98px) {
   .dash-main {
     margin-left: 0;
-    padding: 1.5rem;
+    padding: 1rem;
+    overflow-x: hidden; /* Contain Bootstrap rows on mobile */
   }
 }
 [dir="rtl"] .dash-main { margin-left: 0; margin-right: 260px; }
@@ -844,6 +853,11 @@ h1,h2,h3,h4,h5,h6 {
   [dir="rtl"] .dash-main { margin-right: 0; }
   [dir="rtl"] .dash-sidebar { left: auto; right: -260px; }
   [dir="rtl"] .dash-sidebar.open { right: 0; left: auto; }
+}
+.dashboard-wrapper {
+    display: flex;
+    width: 100%;
+    overflow-x: hidden;
 }
 .dash-topbar {
   display: flex;
@@ -1171,13 +1185,136 @@ h1,h2,h3,h4,h5,h6 {
   .dash-sidebar.open { transform: translateX(0); }
   .dash-main { margin-left: 0 !important; margin-right: 0 !important; }
 }
-@media (max-width: 768px) {
-  .section-pad { padding: 50px 0; }
-  .hero-section { min-height: 75vh; }
-  .hero-section h1 { font-size: 2.2rem; }
-  .stat-card .stat-number { font-size: 2.2rem; }
-  .auth-card { padding: 1.75rem 1.25rem; }
-  .project-card { max-width: 400px; margin-left: auto; margin-right: auto; }
+/* ---- Responsive Dashboard Centering ---- */
+@media (max-width: 991.98px) {
+  .dash-main header {
+    text-align: center;
+    align-items: center !important;
+    padding-top: 1rem; /* Add space at top of header */
+  }
+  .dash-main .header-left, 
+  .dash-main .header-right {
+    width: 100%;
+    justify-content: center !important;
+    align-items: center !important;
+    position: relative;
+  }
+  
+  /* Keep hamburger toggle on the left without overlapping text */
+  #sidebarToggle {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+  }
+  
+  /* Ensure header text has breathing room on mobile */
+  .header-left h2 {
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    padding: 0 40px; /* Prevent text from hitting the toggle */
+  }
+  
+  .dash-main .header-left nav ol {
+    justify-content: center;
+  }
+  
+  .kpi-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem; /* Space for icon */
+  }
+  .kpi-card .kpi-icon {
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+    top: 1rem;
+  }
+  .trend-indicator {
+    justify-content: center;
+  }
+  
+  .dash-widget {
+    text-align: center;
+  }
+  .dash-widget > .d-flex,
+  .dash-widget .mb-4.d-flex {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center !important;
+  }
+  
+  .list-group-item {
+    flex-direction: column;
+    text-align: center;
+    gap: 0.75rem;
+  }
+
+  .activity-item {
+    padding-left: 0;
+    text-align: center;
+  }
+  .activity-item::before {
+    display: none;
+  }
+  .activity-dot {
+    position: relative;
+    margin: 0 auto 0.5rem;
+    display: block;
+  }
+
+  .admin-profile-header {
+    border-left: none !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .dash-widget .gap-2.d-flex {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .dash-table {
+      font-size: 0.8rem;
+  }
+}
+
+/* ---- Responsive Fixes for 360px viewports ---- */
+@media (max-width: 400px) {
+  .brand-navbar .navbar-brand {
+    font-size: 1.25rem; /* Reduce brand size to prevent wrapping */
+    gap: 0.35rem;
+  }
+  .brand-navbar .brand-logo-img {
+    height: 1.5rem;
+  }
+  .brand-navbar .container {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .brand-navbar .btn-brand-secondary {
+    padding-left: 0.75rem !important;
+    padding-right: 0.75rem !important;
+    font-size: 0.8rem;
+  }
+  
+  /* Auth Page Overlap Fixes */
+  .auth-wrapper .position-absolute.top-0.end-0.m-4 {
+    margin: 1rem !important; /* Move toggles closer to edge */
+    gap: 0.75rem !important;
+  }
+  .auth-wrapper .rtlToggle, 
+  .auth-wrapper #themeToggle {
+    font-size: 1.2rem !important; /* Slightly smaller icons */
+  }
+  .auth-card .navbar-brand {
+    font-size: 1.4rem; /* Prevent brand name from hitting toggles */
+  }
 }
 
 /* ---- Animations ---- */
@@ -1227,25 +1364,28 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 /* ---- RTL Toggle Button ---- */
-#rtlToggle, .rtlToggle {
-  background: #fff;
-  border: 1.5px solid #fff;
-  color: var(--primary);
+/* ---- RTL Toggle Button ---- */
+#rtlToggle, .rtlToggle, .themeToggle {
+  background: #ffffff !important;
+  border: 1.5px solid #ffffff !important;
+  color: var(--primary) !important;
   border-radius: 50px;
   width: 40px;
   height: 40px;
-  display: flex;
+  display: flex !important;
   align-items: center;
   justify-content: center;
   cursor: pointer;
   transition: var(--transition);
   font-size: 1.1rem;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  margin-left: 0.75rem;
 }
-#rtlToggle:hover, .rtlToggle:hover {
-  background: var(--secondary);
-  border-color: var(--secondary);
-  color: #fff;
+
+#rtlToggle:hover, .rtlToggle:hover, .themeToggle:hover {
+  background: var(--secondary) !important;
+  border-color: var(--secondary) !important;
+  color: #fff !important;
   transform: scale(1.1);
 }
 
