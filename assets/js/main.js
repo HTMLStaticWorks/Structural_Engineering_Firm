@@ -69,12 +69,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function updateRtlIcon(dir) {
         document.querySelectorAll('.rtlToggle i, #rtlToggle i').forEach(icon => {
+            // Keep a single icon class and flip it for RTL to avoid missing icon classes
+            icon.classList.add('bi-arrow-left-right');
+            icon.classList.remove('bi-arrow-right-left');
             if (dir === 'rtl') {
-                icon.classList.remove('bi-arrow-left-right');
-                icon.classList.add('bi-arrow-right-left');
+                icon.classList.add('rtl-icon-flip');
             } else {
-                icon.classList.remove('bi-arrow-right-left');
-                icon.classList.add('bi-arrow-left-right');
+                icon.classList.remove('rtl-icon-flip');
             }
         });
     }

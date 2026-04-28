@@ -1384,6 +1384,11 @@ h1,h2,h3,h4,h5,h6 {
   transform: scale(1.1) rotate(5deg);
 }
 
+/* Flip the RTL icon without swapping icon classes */
+.rtl-icon-flip {
+  transform: scaleX(-1);
+}
+
 /* Shadow for toggles when they are on white backgrounds (Dashboard/Auth) */
 .toggle-shadow {
   box-shadow: 0 4px 15px rgba(0,0,0,0.15);
